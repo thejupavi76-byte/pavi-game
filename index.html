@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAVI GAME</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#0d0b18;
+    color:white;
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+}
+
+.header{
+    height:125px;
+    padding:22px 26px;
+    border-bottom:1px solid #29263b;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-area h2{
+    color:#b96cff;
+    font-size:25px;
+}
+
+.logo-area p{
+    color:#9691a5;
+    margin-top:8px;
+    font-size:14px;
+}
+
+.wallet{
+    background:linear-gradient(135deg,#a52cff,#7b21d9);
+    padding:18px 24px;
+    border-radius:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.container{
+    padding:28px 25px 110px;
+}
+
+.hero{
+    background:linear-gradient(145deg,#211e30,#191725);
+    border:1px solid #302c42;
+    border-radius:30px;
+    padding:32px;
+    margin-bottom:38px;
+}
+
+.hero small{
+    color:#bf70ff;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:32px;
+    margin:18px 0;
+}
+
+.hero p{
+    color:#aaa5b8;
+    font-size:17px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.section-title h2{
+    font-size:24px;
+}
+
+.available{
+    color:#c06cff;
+    font-size:15px;
+}
+
+.cards{
+    background:#1b1928;
+    border:1px solid #302c42;
+    border-radius:28px;
+    min-height:200px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.game-icon{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.cards p{
+    color:#aaa5b8;
+    font-size:18px;
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:90px;
+    background:#111827;
+    border-top:1px solid #303044;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.nav-item{
+    text-align:center;
+    color:#a7a3b1;
+    font-size:14px;
+}
+
+.nav-item .icon{
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.nav-item.active{
+    color:#bd6cff;
+}
+
+@media(max-width:500px){
+    .header{
+        padding:20px;
+    }
+
+    .container{
+        padding:25px 20px 110px;
+    }
+
+    .hero{
+        padding:28px;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .wallet{
+        padding:15px 18px;
+        font-size:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo-area">
+        <h2>🎮 PAVI GAME</h2>
+        <p>Welcome, Pavilon</p>
+    </div>
+
+    <div class="wallet">
+        💳 ₹0.00
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="hero">
+        <small>PAVI GAME</small>
+
+        <h1>Play &amp; Win</h1>
+
+        <p>
+            Join tournaments and earn rewards.
+        </p>
+    </section>
+
+
+    <div class="section-title">
+        <h2>Tournaments</h2>
+        <span class="available">0 Available</span>
+    </div>
+
+
+    <section class="cards">
+
+        <div class="game-icon">🎮</div>
+
+        <p>No tournaments available.</p>
+
+    </section>
+
+</main>
+
+
+<nav class="bottom-nav">
+
+    <div class="nav-item active">
+        <div class="icon">⌂</div>
+        Home
+    </div>
+
+    <div class="nav-item">
+        <div class="icon">▣</div>
+        Wallet
+    </div>
+
+    <div class="nav-item">
+        <div class="icon">👤</div>
+        Profile
+    </div>
+
+</nav>
+
+</body>
+</html>
