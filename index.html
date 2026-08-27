@@ -597,19 +597,123 @@ body{
 
 <div id="walletPage" class="page">
 
-    <div class="simple-page">
+    <div class="wallet-page">
 
-        <div class="simple-card">
+        <!-- HEADER -->
 
-            <h2>🪙 WALLET</h2>
+        <div class="wallet-header">
 
-            <p>
-                Your current balance
-            </p>
+            <a href="#" class="back-btn">
+                ‹
+            </a>
 
-            <h1 style="font-size:40px;margin-top:20px;">
-                🪙 0.00
-            </h1>
+            <h1>My Wallet</h1>
+
+        </div>
+
+
+        <!-- BALANCE TITLE -->
+
+        <div class="balance-title">
+            TOTAL BALANCE
+        </div>
+
+
+        <!-- BALANCE CARD -->
+
+        <div class="balance-card">
+
+            <div class="balance-left">
+
+                <div class="total-amount">
+                    🪙 ₹<span id="balance">0.00</span>
+                </div>
+
+                <div class="money-row">
+                    Win money :
+                    <span class="coin">🪙</span>
+                    ₹<span id="winMoney">0.00</span>
+                </div>
+
+                <div class="money-row">
+                    Join money :
+                    <span class="coin">🪙</span>
+                    ₹<span id="joinMoney">0.00</span>
+                </div>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="action-buttons">
+
+                <button
+                    type="button"
+                    class="action-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#depositModal"
+                >
+                    ADD
+                </button>
+
+                <button
+                    type="button"
+                    class="action-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#withdrawModal"
+                >
+                    WITHDRAW
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div>
+
+                <div class="stat-title">
+                    Earnings
+                </div>
+
+                <div class="stat-card">
+                    🪙 ₹<span id="totalDeposits">0.00</span>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="stat-title">
+                    PAYOUTS
+                </div>
+
+                <div class="stat-card">
+                    🪙 ₹<span id="totalWithdrawals">0.00</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WALLET HISTORY -->
+
+        <div class="history-title">
+            WALLET HISTORY
+        </div>
+
+        <div id="historyContainer">
+
+            <div class="no-history">
+                No wallet transactions yet.
+            </div>
 
         </div>
 
