@@ -779,6 +779,104 @@ body{
 body {
     padding-bottom: 110px;
 }
+    /* ===== INDEX MOBILE COMPACT FIX ===== */
+
+@media (max-width:600px){
+
+    /* 4 GAME CARDS - 2 x 2 */
+    .games-grid,
+    .game-grid,
+    .esports-grid,
+    .games-container{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important;
+    }
+
+    /* GAME CARD */
+    .game-card,
+    .esports-card{
+        height:205px !important;
+        min-height:205px !important;
+        border-radius:17px !important;
+        overflow:hidden !important;
+    }
+
+    /* CARD IMAGE */
+    .game-card img,
+    .esports-card img{
+        height:100% !important;
+        object-fit:cover !important;
+    }
+
+    /* CARD CONTENT */
+    .game-card-content,
+    .esports-card-content{
+        padding:8px !important;
+    }
+
+    /* ===== GAME CARD TITLE ===== */
+
+.game-card-title,
+.esports-card-title{
+    font-size:14px !important;
+    font-weight:800 !important;
+    color:#fff !important;
+    letter-spacing:.3px !important;
+    text-shadow:
+        0 1px 4px rgba(0,0,0,.9),
+        0 0 6px rgba(255,255,255,.25) !important;
+
+    position:absolute !important;
+    left:10px !important;
+    right:10px !important;
+    bottom:48px !important;
+
+    z-index:5 !important;
+
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+}
+
+    /* JOIN BUTTON */
+    .game-card button,
+    .esports-card button,
+    .join-btn{
+        height:34px !important;
+        min-height:34px !important;
+        border-radius:10px !important;
+        font-size:10px !important;
+    }
+
+    /* MATCH STATUS CARDS */
+    .match-status > *,
+    .match-stats > *{
+        min-height:95px !important;
+        height:95px !important;
+        padding:8px 5px !important;
+    }
+
+    /* LESS GLOW */
+    .game-card,
+    .esports-card,
+    .match-status > *,
+    .match-stats > *{
+        box-shadow:
+            0 0 5px rgba(255,255,255,.12) !important;
+    }
+}
+
+
+/* SMALL PHONE */
+@media(max-width:380px){
+
+    .game-card,
+    .esports-card{
+        height:205px !important;
+        min-height:205px !important;
+    }
+
+}
     
 </style>
 </head>
