@@ -780,31 +780,36 @@ body {
     padding-bottom: 110px;
 }
     /* =====================================================
-   PAVI GAME - FINAL ONE SCREEN MOBILE CSS
+   PAVI GAME — MOBILE CLEAN + SCROLL VERSION
 ===================================================== */
 
 *{
     box-sizing:border-box;
 }
 
-html,
-body{
-    margin:0 !important;
-    padding:0 !important;
+html{
+    width:100%;
+    min-height:100%;
+    margin:0;
+    padding:0;
+    background:#000;
+    overflow-x:hidden;
+}
 
-    width:100% !important;
-    height:100% !important;
-    min-height:100% !important;
+body{
+    width:100%;
+    min-height:100vh;
+    margin:0 !important;
+    padding:0 0 95px 0 !important;
 
     background:#000 !important;
     color:#fff !important;
 
-    overflow:hidden !important;
-    overscroll-behavior:none !important;
-}
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
 
-body{
-    padding-bottom:0 !important;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:none;
 }
 
 
@@ -816,16 +821,18 @@ body{
 .top-header,
 .home-header{
     width:100% !important;
-    height:88px !important;
-    min-height:88px !important;
+    height:92px !important;
+    min-height:92px !important;
 
-    padding:8px 20px !important;
+    padding:8px 22px !important;
 
     display:flex !important;
     align-items:center !important;
     justify-content:space-between !important;
 
     background:#000 !important;
+
+    border-bottom:1px solid rgba(255,255,255,.18);
 }
 
 
@@ -847,11 +854,11 @@ body{
 
     box-shadow:
         0 0 8px rgba(255,255,255,.8),
-        0 0 18px rgba(255,255,255,.35) !important;
+        0 0 20px rgba(255,255,255,.35) !important;
 }
 
 
-/* HEADER TEXT */
+/* HEADER CENTER */
 
 .welcome,
 .welcome-text,
@@ -870,12 +877,12 @@ body{
 .header-welcome small{
     display:block !important;
 
-    font-size:11px !important;
-    line-height:14px !important;
+    margin:0 0 3px !important;
 
     color:#aaa !important;
 
-    margin:0 0 2px !important;
+    font-size:11px !important;
+    line-height:14px !important;
 }
 
 .welcome h1,
@@ -884,16 +891,16 @@ body{
 .header-name{
     margin:0 !important;
 
-    font-size:18px !important;
+    color:#fff !important;
+
+    font-size:20px !important;
     line-height:22px !important;
 
     white-space:nowrap !important;
 
-    color:#fff !important;
-
     text-shadow:
         0 0 5px #fff,
-        0 0 12px rgba(255,255,255,.5) !important;
+        0 0 14px rgba(255,255,255,.5) !important;
 }
 
 
@@ -902,10 +909,10 @@ body{
 .balance-box,
 .header-balance,
 .wallet-balance{
-    width:92px !important;
-    height:52px !important;
+    width:96px !important;
+    height:54px !important;
 
-    flex:0 0 92px !important;
+    flex:0 0 96px !important;
 
     display:flex !important;
     align-items:center !important;
@@ -913,12 +920,13 @@ body{
 
     border:1.5px solid #fff !important;
 
-    border-radius:17px !important;
+    border-radius:18px !important;
 
     background:#030303 !important;
 
     box-shadow:
-        0 0 8px rgba(255,255,255,.6) !important;
+        0 0 8px rgba(255,255,255,.6),
+        inset 0 0 10px rgba(255,255,255,.04) !important;
 }
 
 
@@ -930,21 +938,21 @@ body{
 .banner,
 .game-banner,
 .pavi-banner{
-    width:calc(100% - 50px) !important;
+    width:calc(100% - 48px) !important;
 
-    height:112px !important;
+    height:125px !important;
 
-    margin:10px 25px 8px !important;
+    margin:18px 24px 10px !important;
 
-    border-radius:22px !important;
+    border-radius:24px !important;
 
     overflow:hidden !important;
 
     border:1.5px solid #fff !important;
 
     box-shadow:
-        0 0 9px rgba(255,255,255,.65),
-        0 0 20px rgba(255,255,255,.2) !important;
+        0 0 10px rgba(255,255,255,.65),
+        0 0 25px rgba(255,255,255,.18) !important;
 }
 
 
@@ -953,21 +961,26 @@ body{
 ===================================================== */
 
 .section-title,
-.section-heading,
-h2{
-    font-size:20px !important;
-
-    line-height:24px !important;
-
-    margin:7px 0 7px !important;
+.section-heading{
+    margin:14px 0 10px !important;
 
     text-align:center !important;
 
     color:#fff !important;
 
+    font-size:22px !important;
+    line-height:26px !important;
+
     text-shadow:
         0 0 5px #fff,
-        0 0 12px rgba(255,255,255,.4) !important;
+        0 0 14px rgba(255,255,255,.4) !important;
+}
+
+
+/* Avoid affecting every h2 on page */
+.matches-grid ~ h2,
+.stats-grid ~ h2{
+    text-align:center !important;
 }
 
 
@@ -978,48 +991,61 @@ h2{
 .matches-grid,
 .match-grid,
 .stats-grid{
+    width:calc(100% - 48px) !important;
 
-    width:calc(100% - 50px) !important;
-
-    margin:0 25px !important;
+    margin:0 24px !important;
 
     display:grid !important;
 
     grid-template-columns:
         repeat(3,minmax(0,1fr)) !important;
 
-    gap:8px !important;
+    gap:9px !important;
 }
 
 
 .match-card,
 .stat-card{
-
     width:100% !important;
 
-    height:92px !important;
-    min-height:92px !important;
+    min-width:0 !important;
 
-    padding:7px 4px !important;
+    height:104px !important;
+    min-height:104px !important;
+
+    padding:8px 5px !important;
 
     border:1px solid rgba(255,255,255,.75) !important;
 
-    border-radius:17px !important;
+    border-radius:18px !important;
 
     background:#030303 !important;
 
     box-shadow:
-        0 0 8px rgba(255,255,255,.3) !important;
+        0 0 9px rgba(255,255,255,.28) !important;
 }
 
 
-/* Match card text */
+/* Match icons */
+
+.match-card i,
+.match-card svg,
+.stat-card i,
+.stat-card svg{
+    max-width:38px !important;
+    max-height:38px !important;
+}
+
+
+/* Match text */
 
 .match-card h3,
 .match-card h4,
 .stat-card h3,
 .stat-card h4{
-    margin:3px 0 !important;
+    margin:4px 0 !important;
+
+    font-size:12px !important;
 }
 
 
@@ -1027,9 +1053,20 @@ h2{
    ESPORTS TITLE
 ===================================================== */
 
-.matches-grid + *,
-.stats-grid + *{
-    margin-top:5px !important;
+.esports-title,
+.games-title{
+    margin:14px 0 10px !important;
+
+    text-align:center !important;
+
+    font-size:22px !important;
+    line-height:26px !important;
+
+    color:#fff !important;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 14px rgba(255,255,255,.4) !important;
 }
 
 
@@ -1040,42 +1077,42 @@ h2{
 .game-tabs,
 .tabs,
 .category-tabs{
+    width:calc(100% - 48px) !important;
 
-    width:calc(100% - 50px) !important;
+    height:48px !important;
 
-    height:45px !important;
+    margin:8px 24px 10px !important;
 
-    margin:5px 25px 8px !important;
-
-    border-radius:15px !important;
+    display:flex !important;
 
     overflow:hidden !important;
 
     border:1px solid #fff !important;
+
+    border-radius:16px !important;
 }
 
 
 /* =====================================================
-   ESPORTS GAME GRID
+   GAME GRID
 ===================================================== */
 
 .games-grid,
 .game-grid,
 .esports-grid,
 .games-container{
+    width:calc(100% - 48px) !important;
 
-    width:calc(100% - 50px) !important;
-
-    margin:0 25px !important;
+    margin:0 24px 25px !important;
 
     display:grid !important;
 
     grid-template-columns:
         repeat(2,minmax(0,1fr)) !important;
 
-    gap:7px !important;
+    gap:9px !important;
 
-    overflow:hidden !important;
+    overflow:visible !important;
 }
 
 
@@ -1085,24 +1122,23 @@ h2{
 
 .game-card,
 .esports-card{
-
     width:100% !important;
 
-    height:125px !important;
-    min-height:125px !important;
+    height:145px !important;
+    min-height:145px !important;
 
     position:relative !important;
 
     overflow:hidden !important;
 
-    border-radius:15px !important;
-
     border:1px solid rgba(255,255,255,.8) !important;
+
+    border-radius:17px !important;
 
     background:#050505 !important;
 
     box-shadow:
-        0 0 7px rgba(255,255,255,.35) !important;
+        0 0 8px rgba(255,255,255,.35) !important;
 }
 
 
@@ -1110,22 +1146,19 @@ h2{
 
 .game-card img,
 .esports-card img{
-
     width:100% !important;
-
     height:100% !important;
 
-    object-fit:cover !important;
-
     display:block !important;
+
+    object-fit:cover !important;
 }
 
 
-/* DARK OVERLAY */
+/* IMAGE DARKNESS */
 
 .game-card::after,
 .esports-card::after{
-
     content:"";
 
     position:absolute !important;
@@ -1135,7 +1168,7 @@ h2{
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.05),
+            rgba(0,0,0,.03),
             rgba(0,0,0,.75)
         ) !important;
 
@@ -1149,12 +1182,11 @@ h2{
 
 .game-card-content,
 .esports-card-content{
-
     position:absolute !important;
 
-    left:8px !important;
-    right:8px !important;
-    bottom:7px !important;
+    left:10px !important;
+    right:10px !important;
+    bottom:8px !important;
 
     z-index:5 !important;
 
@@ -1167,28 +1199,25 @@ h2{
 .game-title,
 .game-name,
 .esports-title{
-
     display:block !important;
 
     margin:0 0 5px !important;
 
-    font-size:11px !important;
+    color:#fff !important;
 
+    font-size:12px !important;
     line-height:15px !important;
 
     font-weight:800 !important;
 
-    color:#fff !important;
-
     white-space:nowrap !important;
 
     overflow:hidden !important;
-
     text-overflow:ellipsis !important;
 
     text-shadow:
         0 0 5px #000,
-        0 0 7px rgba(255,255,255,.4) !important;
+        0 0 8px rgba(255,255,255,.4) !important;
 }
 
 
@@ -1199,27 +1228,26 @@ h2{
 .game-card button,
 .join-btn,
 .game-button{
-
     width:100% !important;
 
-    height:32px !important;
+    height:34px !important;
 
     padding:0 !important;
 
-    border-radius:11px !important;
-
     border:1px solid #fff !important;
 
-    background:rgba(0,0,0,.82) !important;
+    border-radius:11px !important;
+
+    background:rgba(0,0,0,.85) !important;
 
     color:#fff !important;
 
-    font-size:10px !important;
+    font-size:11px !important;
 
     font-weight:700 !important;
 
     box-shadow:
-        0 0 5px rgba(255,255,255,.3) !important;
+        0 0 6px rgba(255,255,255,.3) !important;
 }
 
 
@@ -1228,45 +1256,41 @@ h2{
 ===================================================== */
 
 .bottom-nav{
-
     position:fixed !important;
 
-    left:25px !important;
-    right:25px !important;
+    left:24px !important;
+    right:24px !important;
     bottom:10px !important;
 
     width:auto !important;
 
-    height:60px !important;
+    height:64px !important;
 
     z-index:999999 !important;
 
     display:flex !important;
 
-    border-radius:20px !important;
+    border-radius:21px !important;
 
     background:
         rgba(8,8,10,.97) !important;
 
-    border:1px solid rgba(255,255,255,.7) !important;
+    border:1px solid rgba(255,255,255,.65) !important;
 
     box-shadow:
-        0 0 12px rgba(255,255,255,.18) !important;
+        0 0 14px rgba(255,255,255,.18) !important;
 
-    backdrop-filter:blur(12px) !important;
+    backdrop-filter:blur(14px) !important;
 }
 
 
 /* NAV ITEMS */
 
 .bottom-nav .nav-item{
-
     width:33.333% !important;
-
-    height:58px !important;
+    height:62px !important;
 
     display:flex !important;
-
     align-items:center !important;
     justify-content:center !important;
 
@@ -1278,10 +1302,9 @@ h2{
 }
 
 
-/* ACTIVE NAV */
+/* ACTIVE */
 
 .bottom-nav .nav-item.active{
-
     color:#fff !important;
 
     text-shadow:
@@ -1296,17 +1319,14 @@ h2{
 
 @media(max-width:600px){
 
-    html,
     body{
-        width:100vw !important;
-        height:100svh !important;
+        min-height:100vh !important;
 
-        overflow:hidden !important;
-    }
+        /* SCROLL ENABLED */
+        overflow-x:hidden !important;
+        overflow-y:auto !important;
 
-    body{
-        padding:0 !important;
-        margin:0 !important;
+        padding-bottom:100px !important;
     }
 
 
@@ -1315,9 +1335,8 @@ h2{
     .header,
     .top-header,
     .home-header{
-
-        height:82px !important;
-        min-height:82px !important;
+        height:88px !important;
+        min-height:88px !important;
 
         padding:7px 20px !important;
     }
@@ -1326,11 +1345,10 @@ h2{
     .profile-img,
     .user-avatar,
     .header-avatar{
+        width:56px !important;
+        height:56px !important;
 
-        width:54px !important;
-        height:54px !important;
-
-        flex-basis:54px !important;
+        flex-basis:56px !important;
     }
 
 
@@ -1338,20 +1356,17 @@ h2{
     .welcome h2,
     .user-name,
     .header-name{
-
-        font-size:17px !important;
-        line-height:20px !important;
+        font-size:18px !important;
     }
 
 
     .balance-box,
     .header-balance,
     .wallet-balance{
+        width:92px !important;
+        height:52px !important;
 
-        width:88px !important;
-        height:49px !important;
-
-        flex-basis:88px !important;
+        flex-basis:92px !important;
     }
 
 
@@ -1361,12 +1376,13 @@ h2{
     .banner,
     .game-banner,
     .pavi-banner{
-
-        height:108px !important;
-
-        margin:9px 20px 7px !important;
-
         width:calc(100% - 40px) !important;
+
+        height:120px !important;
+
+        margin:15px 20px 10px !important;
+
+        border-radius:22px !important;
     }
 
 
@@ -1374,13 +1390,13 @@ h2{
 
     .section-title,
     .section-heading,
-    h2{
+    .esports-title,
+    .games-title{
+        font-size:21px !important;
 
-        font-size:19px !important;
+        line-height:25px !important;
 
-        line-height:22px !important;
-
-        margin:6px 0 !important;
+        margin:12px 0 9px !important;
     }
 
 
@@ -1389,7 +1405,6 @@ h2{
     .matches-grid,
     .match-grid,
     .stats-grid{
-
         width:calc(100% - 40px) !important;
 
         margin:0 20px !important;
@@ -1400,11 +1415,10 @@ h2{
 
     .match-card,
     .stat-card{
+        height:100px !important;
+        min-height:100px !important;
 
-        height:88px !important;
-        min-height:88px !important;
-
-        border-radius:16px !important;
+        border-radius:17px !important;
     }
 
 
@@ -1413,14 +1427,13 @@ h2{
     .game-tabs,
     .tabs,
     .category-tabs{
-
         width:calc(100% - 40px) !important;
 
-        height:43px !important;
+        height:46px !important;
 
-        margin:5px 20px 7px !important;
+        margin:7px 20px 9px !important;
 
-        border-radius:14px !important;
+        border-radius:15px !important;
     }
 
 
@@ -1430,12 +1443,13 @@ h2{
     .game-grid,
     .esports-grid,
     .games-container{
-
         width:calc(100% - 40px) !important;
 
-        margin:0 20px !important;
+        margin:0 20px 25px !important;
 
-        gap:7px !important;
+        gap:8px !important;
+
+        overflow:visible !important;
     }
 
 
@@ -1443,17 +1457,15 @@ h2{
 
     .game-card,
     .esports-card{
+        height:140px !important;
+        min-height:140px !important;
 
-        height:121px !important;
-        min-height:121px !important;
-
-        border-radius:14px !important;
+        border-radius:15px !important;
     }
 
 
     .game-card-content,
     .esports-card-content{
-
         left:8px !important;
         right:8px !important;
         bottom:7px !important;
@@ -1463,7 +1475,6 @@ h2{
     .game-title,
     .game-name,
     .esports-title{
-
         font-size:11px !important;
 
         line-height:14px !important;
@@ -1475,8 +1486,7 @@ h2{
     .game-card button,
     .join-btn,
     .game-button{
-
-        height:30px !important;
+        height:32px !important;
 
         font-size:10px !important;
 
@@ -1484,29 +1494,26 @@ h2{
     }
 
 
-    /* BOTTOM */
+    /* BOTTOM NAV */
 
     .bottom-nav{
-
         left:20px !important;
         right:20px !important;
         bottom:8px !important;
 
-        height:58px !important;
+        height:60px !important;
 
-        border-radius:19px !important;
+        border-radius:20px !important;
     }
 
-
     .bottom-nav .nav-item{
-
-        height:56px !important;
+        height:58px !important;
     }
 }
 
 
 /* =====================================================
-   SMALL PHONE
+   SMALL PHONES
 ===================================================== */
 
 @media(max-width:380px){
@@ -1514,66 +1521,53 @@ h2{
     .header,
     .top-header,
     .home-header{
-
         padding-left:14px !important;
         padding-right:14px !important;
     }
 
+
     .profile-img,
     .user-avatar,
     .header-avatar{
-
         width:50px !important;
         height:50px !important;
 
         flex-basis:50px !important;
     }
 
+
     .welcome h1,
     .welcome h2,
     .user-name,
     .header-name{
-
         font-size:15px !important;
     }
+
 
     .balance-box,
     .header-balance,
     .wallet-balance{
-
         width:80px !important;
-
         flex-basis:80px !important;
     }
+
 
     .hero,
     .banner,
     .game-banner,
     .pavi-banner{
-
         width:calc(100% - 28px) !important;
 
         margin-left:14px !important;
         margin-right:14px !important;
 
-        height:100px !important;
+        height:105px !important;
     }
+
 
     .matches-grid,
     .match-grid,
     .stats-grid{
-
-        width:calc(100% - 28px) !important;
-
-        margin-left:14px !important;
-        margin-right:14px !important;
-    }
-
-    .games-grid,
-    .game-grid,
-    .esports-grid,
-    .games-container{
-
         width:calc(100% - 28px) !important;
 
         margin-left:14px !important;
@@ -1582,20 +1576,49 @@ h2{
         gap:6px !important;
     }
 
-    .game-card,
-    .esports-card{
 
-        height:112px !important;
-        min-height:112px !important;
+    .match-card,
+    .stat-card{
+        height:92px !important;
+        min-height:92px !important;
     }
 
-    .bottom-nav{
 
+    .game-tabs,
+    .tabs,
+    .category-tabs{
+        width:calc(100% - 28px) !important;
+
+        margin-left:14px !important;
+        margin-right:14px !important;
+    }
+
+
+    .games-grid,
+    .game-grid,
+    .esports-grid,
+    .games-container{
+        width:calc(100% - 28px) !important;
+
+        margin-left:14px !important;
+        margin-right:14px !important;
+
+        gap:6px !important;
+    }
+
+
+    .game-card,
+    .esports-card{
+        height:128px !important;
+        min-height:128px !important;
+    }
+
+
+    .bottom-nav{
         left:14px !important;
         right:14px !important;
     }
-    }
-
+               }
 </style>
 </head>
 
