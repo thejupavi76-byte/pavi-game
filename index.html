@@ -823,8 +823,483 @@ body{
 </section>
 
 </main>
+<!-- ================= WALLET PAGE ================= -->
+
+<section id="walletPage" style="display:none;">
+
+<style>
+#walletPage{
+    min-height:calc(100vh - 82px);
+    padding:25px 16px 105px;
+    background:
+        radial-gradient(circle at 50% 0%,#181818 0%,#050505 38%,#000 80%);
+    color:#fff;
+}
+
+.wallet-wrap{
+    max-width:700px;
+    margin:auto;
+}
+
+.wallet-heading{
+    text-align:center;
+    margin-bottom:22px;
+}
+
+.wallet-heading small{
+    color:#777;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.wallet-heading h1{
+    margin-top:7px;
+    font-size:28px;
+    text-shadow:
+        0 0 6px #fff,
+        0 0 18px rgba(255,255,255,.55);
+}
 
 
+/* BALANCE */
+
+.wallet-balance{
+    position:relative;
+    overflow:hidden;
+
+    padding:25px 20px;
+
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:25px;
+
+    background:
+        linear-gradient(145deg,#151515,#030303);
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.8),
+        0 0 25px rgba(255,255,255,.16),
+        inset 0 0 20px rgba(255,255,255,.04);
+}
+
+.wallet-balance:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:15%;
+    width:70%;
+    height:1px;
+    background:#fff;
+    box-shadow:
+        0 0 8px #fff,
+        0 0 20px #fff;
+}
+
+.wallet-label{
+    color:#777;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.wallet-total{
+    margin:8px 0 24px;
+
+    font-size:42px;
+    font-weight:700;
+
+    text-shadow:
+        0 0 6px #fff,
+        0 0 17px rgba(255,255,255,.6);
+}
+
+.wallet-money{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 0;
+
+    border-top:1px solid #292929;
+
+    font-size:13px;
+}
+
+.wallet-money span{
+    color:#999;
+}
+
+.wallet-money strong{
+    color:#fff;
+}
+
+
+/* BUTTONS */
+
+.wallet-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.wallet-action{
+    flex:1;
+    height:48px;
+
+    border-radius:14px;
+    border:1px solid #aaa;
+
+    background:#050505;
+    color:#fff;
+
+    font-family:inherit;
+    font-weight:700;
+    font-size:12px;
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.45);
+
+    transition:.2s;
+}
+
+.wallet-action:active{
+    transform:scale(.96);
+    box-shadow:
+        0 0 18px #fff;
+}
+
+
+/* STATISTICS */
+
+.wallet-section-title{
+    margin:30px 0 15px;
+
+    font-size:20px;
+    font-weight:700;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 13px rgba(255,255,255,.5);
+}
+
+.wallet-section-title:after{
+    content:"";
+
+    display:block;
+
+    width:55px;
+    height:2px;
+
+    margin-top:8px;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 7px #fff,
+        0 0 15px #fff;
+}
+
+.wallet-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.wallet-stat{
+    min-height:120px;
+
+    padding:18px 8px;
+
+    text-align:center;
+
+    border:1px solid #555;
+    border-radius:19px;
+
+    background:
+        linear-gradient(145deg,#111,#030303);
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.3),
+        inset 0 0 15px rgba(255,255,255,.025);
+}
+
+.wallet-stat-icon{
+    font-size:25px;
+    margin-bottom:9px;
+
+    filter:drop-shadow(0 0 6px #fff);
+}
+
+.wallet-stat small{
+    display:block;
+    color:#777;
+    font-size:9px;
+    letter-spacing:1px;
+}
+
+.wallet-stat strong{
+    display:block;
+    margin-top:7px;
+    font-size:18px;
+}
+
+
+/* HISTORY */
+
+.wallet-history{
+    overflow:hidden;
+
+    border:1px solid #555;
+    border-radius:21px;
+
+    background:#070707;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.28);
+}
+
+.wallet-history-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:17px;
+
+    border-bottom:1px solid #242424;
+}
+
+.wallet-history-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.wallet-history-icon{
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #555;
+    border-radius:13px;
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.35);
+}
+
+.wallet-history-title{
+    font-size:13px;
+    font-weight:700;
+}
+
+.wallet-history-date{
+    margin-top:4px;
+    color:#666;
+    font-size:10px;
+}
+
+.wallet-history-amount{
+    font-size:13px;
+    font-weight:700;
+}
+
+.wallet-empty{
+    padding:25px;
+    text-align:center;
+    color:#555;
+    font-size:11px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    #walletPage{
+        padding:23px 15px 100px;
+    }
+
+    .wallet-total{
+        font-size:36px;
+    }
+
+    .wallet-stats{
+        gap:8px;
+    }
+
+    .wallet-stat{
+        min-height:110px;
+    }
+
+}
+</style>
+
+
+<div class="wallet-wrap">
+
+    <div class="wallet-heading">
+
+        <small>MY ACCOUNT</small>
+
+        <h1>MY WALLET</h1>
+
+    </div>
+
+
+    <!-- BALANCE -->
+
+    <div class="wallet-balance">
+
+        <div class="wallet-label">
+            TOTAL BALANCE
+        </div>
+
+        <div class="wallet-total">
+            🪙 ₹0.00
+        </div>
+
+
+        <div class="wallet-money">
+
+            <span>🪙 Win Money</span>
+
+            <strong>₹0.00</strong>
+
+        </div>
+
+
+        <div class="wallet-money">
+
+            <span>💰 Join Money</span>
+
+            <strong>₹0.00</strong>
+
+        </div>
+
+
+        <div class="wallet-buttons">
+
+            <button
+                class="wallet-action"
+                onclick="alert('Add Money')">
+
+                ＋ ADD MONEY
+
+            </button>
+
+
+            <button
+                class="wallet-action"
+                onclick="alert('Withdraw Money')">
+
+                WITHDRAW
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <h2 class="wallet-section-title">
+        Wallet Statistics
+    </h2>
+
+
+    <div class="wallet-stats">
+
+        <div class="wallet-stat">
+
+            <div class="wallet-stat-icon">
+                💰
+            </div>
+
+            <small>EARNINGS</small>
+
+            <strong>₹0.00</strong>
+
+        </div>
+
+
+        <div class="wallet-stat">
+
+            <div class="wallet-stat-icon">
+                🏆
+            </div>
+
+            <small>WINNINGS</small>
+
+            <strong>₹0.00</strong>
+
+        </div>
+
+
+        <div class="wallet-stat">
+
+            <div class="wallet-stat-icon">
+                💸
+            </div>
+
+            <small>PAYOUTS</small>
+
+            <strong>₹0.00</strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- HISTORY -->
+
+    <h2 class="wallet-section-title">
+        Wallet History
+    </h2>
+
+
+    <div class="wallet-history">
+
+        <div class="wallet-history-item">
+
+            <div class="wallet-history-left">
+
+                <div class="wallet-history-icon">
+                    🪙
+                </div>
+
+                <div>
+
+                    <div class="wallet-history-title">
+                        Wallet Balance
+                    </div>
+
+                    <div class="wallet-history-date">
+                        No transactions yet
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="wallet-history-amount">
+                ₹0.00
+            </div>
+
+        </div>
+
+
+        <div class="wallet-empty">
+            Your wallet transactions will appear here.
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+    
 <!-- ================= BOTTOM NAV ================= -->
 
 <nav class="bottom-nav">
