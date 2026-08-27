@@ -646,7 +646,70 @@ body{
         font-size:10px;
     }
 }
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 82px;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background: rgba(0, 0, 0, 0.95);
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    z-index: 99999;
+}
+
+/* Navigation buttons */
+.nav-item {
+    width: 70px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent !important;
+    border: none !important;
+
+    color: rgba(255,255,255,0.35);
+
+    transition: 0.25s ease;
+}
+
+/* Icons */
+.nav-icon {
+    font-size: 30px;
+    color: rgba(255,255,255,0.35);
+
+    transition: 0.25s ease;
+}
+
+/* Current page - simple glow */
+.nav-item.active .nav-icon {
+    color: #fff;
+
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.8),
+        0 0 14px rgba(255,255,255,0.45);
+
+    transform: scale(1.08);
+}
+
+/* Small touch animation */
+.nav-item:active {
+    transform: scale(0.90);
+}
+
+/* Prevent content from hiding behind bottom bar */
+body {
+    padding-bottom: 95px;
+}
+    
 </style>
 </head>
 
