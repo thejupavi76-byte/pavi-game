@@ -481,4 +481,255 @@ body{
 
     <h2 class="section-title">
         Esports Games
-    </h2
+    </h2>
+
+
+    <!-- ONLY ONE TAB -->
+
+    <div class="tabs">
+
+        <div class="tab active">
+            TOURNAMENT
+        </div>
+
+        <div class="tab">
+            SOLO
+        </div>
+
+    </div>
+
+
+    <!-- ================= ONLY 4 GAMES ================= -->
+
+    <div class="games">
+
+
+        <!-- FULL MAP -->
+
+        <div class="game"
+             onclick="openGame('FULL MAP')">
+
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="FULL MAP"
+                >
+
+                <div class="game-title">
+                    FULL MAP
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CS 1V1 ONETAP -->
+
+        <div class="game"
+             onclick="openGame('CS 1V1 ONETAP')">
+
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="CS 1V1 ONETAP"
+                >
+
+                <div class="game-title">
+                    CS 1V1 ONETAP
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CS 2V2 ONETAP -->
+
+        <div class="game"
+             onclick="openGame('CS 2V2 ONETAP')">
+
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="CS 2V2 ONETAP"
+                >
+
+                <div class="game-title">
+                    CS 2V2 ONETAP
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CS 4V4 ONETAP -->
+
+        <div class="game"
+             onclick="openGame('CS 4V4 ONETAP')">
+
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="CS 4V4 ONETAP"
+                >
+
+                <div class="game-title">
+                    CS 4V4 ONETAP
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= WALLET PAGE ================= -->
+
+<div id="walletPage" class="page">
+
+    <div class="simple-page">
+
+        <div class="simple-card">
+
+            <h2>🪙 WALLET</h2>
+
+            <p>
+                Your current balance
+            </p>
+
+            <h1 style="font-size:40px;margin-top:20px;">
+                🪙 0.00
+            </h1>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROFILE PAGE ================= -->
+
+<div id="profilePage" class="page">
+
+    <div class="simple-page">
+
+        <div class="simple-card">
+
+            <h2>👤 PROFILE</h2>
+
+            <p>
+                Welcome back,
+            </p>
+
+            <h1 style="margin-top:15px;">
+                EREN YEAGER
+            </h1>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<div class="bottom-nav">
+
+    <div
+        class="nav-item active"
+        onclick="showPage('homePage',this)"
+    >
+
+        <div class="nav-icon">
+            ⌂
+        </div>
+
+        Home
+
+    </div>
+
+
+    <div
+        class="nav-item"
+        onclick="showPage('walletPage',this)"
+    >
+
+        <div class="nav-icon">
+            ▣
+        </div>
+
+        Wallet
+
+    </div>
+
+
+    <div
+        class="nav-item"
+        onclick="showPage('profilePage',this)"
+    >
+
+        <div class="nav-icon">
+            👤
+        </div>
+
+        Profile
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showPage(pageId, element){
+
+    document.querySelectorAll('.page').forEach(function(page){
+
+        page.classList.remove('active');
+
+    });
+
+
+    document.getElementById(pageId)
+        .classList.add('active');
+
+
+    document.querySelectorAll('.nav-item').forEach(function(item){
+
+        item.classList.remove('active');
+
+    });
+
+
+    element.classList.add('active');
+
+    window.scrollTo(0,0);
+
+}
+
+
+function openGame(gameName){
+
+    alert(gameName + " selected!");
+
+}
+
+</script>
+
+
+</body>
+</html>
