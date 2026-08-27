@@ -9,30 +9,80 @@
 
 <title>My Wallet</title>
 
-</head>
-
-<body>
-
-<section id="walletPage">
-
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    background:#000 !important;
+}
+
+body{
+    color:#fff;
+    font-family:'Chakra Petch', Arial, sans-serif;
+    overflow-x:hidden;
+    padding:0 !important;
+}
+
 
 /* =====================================================
    WALLET PAGE
 ===================================================== */
 
 #walletPage{
+    width:100%;
     min-height:100vh;
-    background:#000 !important;
-    color:#fff !important;
-    padding:22px 16px 115px;
-    font-family:'Chakra Petch',sans-serif;
-    box-sizing:border-box;
+
+    background:#000;
+
+    color:#fff;
+
+    padding:
+        24px
+        16px
+        115px;
+
+    overflow:hidden;
 }
 
 .wallet-wrap{
+    width:100%;
     max-width:700px;
-    margin:auto;
+    margin:0 auto;
+}
+
+
+/* =====================================================
+   WALLET TITLE
+===================================================== */
+
+.wallet-title{
+    text-align:left;
+
+    font-size:27px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    margin:
+        5px 0
+        24px 4px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 4px rgba(255,255,255,.35);
 }
 
 
@@ -41,34 +91,41 @@
 ===================================================== */
 
 .wallet-balance{
+
     position:relative;
-    overflow:hidden;
+
+    width:100%;
 
     background:
         linear-gradient(
             145deg,
             #111 0%,
-            #050505 45%,
-            #000 100%
-        ) !important;
+            #070707 50%,
+            #030303 100%
+        );
 
-    border:1px solid #fff !important;
-    border-radius:25px;
+    border:1px solid rgba(255,255,255,.72);
 
-    padding:24px 20px 20px;
+    border-radius:24px;
+
+    padding:23px 20px 20px;
+
+    overflow:hidden;
 
     box-shadow:
-        0 0 7px #fff,
-        0 0 20px rgba(255,255,255,.35),
-        inset 0 0 25px rgba(255,255,255,.04);
-
-    box-sizing:border-box;
+        0 0 7px rgba(255,255,255,.16),
+        inset 0 0 18px rgba(255,255,255,.025);
 }
 
+
+/* Decorative circle */
+
 .wallet-balance::before{
+
     content:"";
 
     position:absolute;
+
     top:-80px;
     right:-80px;
 
@@ -77,51 +134,86 @@
 
     border-radius:50%;
 
-    border:1px solid rgba(255,255,255,.25);
-
-    box-shadow:
-        0 0 25px rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.16);
 }
 
+
+/* =====================================================
+   BALANCE TEXT
+===================================================== */
+
 .balance-label{
-    color:#aaa;
+
+    color:#999;
+
     font-size:12px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
-    margin-bottom:7px;
+
+    margin-bottom:8px;
 }
 
 .balance-amount{
-    font-size:42px;
+
+    font-size:40px;
+
     font-weight:700;
+
     letter-spacing:1px;
 
+    color:#fff;
+
     text-shadow:
-        0 0 7px #fff,
-        0 0 18px rgba(255,255,255,.55);
+        0 0 5px rgba(255,255,255,.45);
 }
 
+
+/* =====================================================
+   LINE
+===================================================== */
+
 .balance-line{
+
+    width:100%;
+
     height:1px;
-    background:#555;
+
+    background:rgba(255,255,255,.28);
+
     margin:18px 0;
 }
 
+
+/* =====================================================
+   MONEY ROW
+===================================================== */
+
 .money-row{
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
 
-    margin:12px 0;
+    justify-content:space-between;
+
+    margin:13px 0;
 }
 
 .money-name{
-    color:#aaa;
-    font-size:13px;
+
+    color:#999;
+
+    font-size:14px;
 }
 
 .money-value{
+
+    color:#fff;
+
     font-size:16px;
+
     font-weight:600;
 }
 
@@ -131,8 +223,11 @@
 ===================================================== */
 
 .wallet-actions{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
 
     gap:12px;
 
@@ -140,33 +235,40 @@
 }
 
 .wallet-btn{
+
     height:48px;
 
     border-radius:14px;
 
-    background:#050505 !important;
-    color:#fff !important;
+    border:1px solid rgba(255,255,255,.78);
 
-    border:1px solid #fff !important;
+    background:#050505;
+
+    color:#fff;
 
     font-family:inherit;
+
     font-size:14px;
+
     font-weight:700;
 
-    box-shadow:
-        0 0 5px rgba(255,255,255,.5),
-        inset 0 0 10px rgba(255,255,255,.03);
+    cursor:pointer;
 
-    transition:.2s;
+    transition:
+        .2s ease;
+
+    box-shadow:
+        0 0 5px rgba(255,255,255,.12);
 }
 
 .wallet-btn:active{
-    background:#fff !important;
-    color:#000 !important;
+
+    transform:scale(.97);
+
+    background:#111;
 
     box-shadow:
-        0 0 12px #fff,
-        0 0 30px rgba(255,255,255,.6);
+        0 0 10px rgba(255,255,255,.25);
 }
 
 
@@ -175,8 +277,11 @@
 ===================================================== */
 
 .wallet-stats{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
 
     gap:13px;
 
@@ -184,101 +289,126 @@
 }
 
 .wallet-stat{
+
     min-height:105px;
 
-    background:#050505 !important;
+    background:#060606;
 
-    border:1px solid rgba(255,255,255,.8) !important;
+    border:1px solid rgba(255,255,255,.55);
 
     border-radius:19px;
 
     padding:18px;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
 
     box-shadow:
-        0 0 6px rgba(255,255,255,.4),
-        0 0 18px rgba(255,255,255,.12);
-
-    box-sizing:border-box;
+        0 0 6px rgba(255,255,255,.10);
 }
 
 .stat-label{
+
     color:#999;
 
     font-size:12px;
 
-    margin-bottom:9px;
+    letter-spacing:1.5px;
 
-    letter-spacing:1px;
+    margin-bottom:9px;
 }
 
 .stat-value{
+
+    color:#fff;
+
     font-size:22px;
+
     font-weight:700;
 
     text-shadow:
-        0 0 6px #fff,
-        0 0 14px rgba(255,255,255,.4);
+        0 0 4px rgba(255,255,255,.35);
 }
 
 
 /* =====================================================
-   HISTORY
+   HISTORY TITLE
 ===================================================== */
 
 .history-title{
+
     text-align:center;
 
-    margin:30px 0 15px;
+    margin:
+        30px 0
+        16px;
 
     font-size:21px;
+
     font-weight:700;
 
+    color:#fff;
+
     text-shadow:
-        0 0 6px #fff,
-        0 0 15px rgba(255,255,255,.55);
+        0 0 5px rgba(255,255,255,.35);
 }
 
 .history-title::after{
+
     content:"";
 
     display:block;
 
-    width:55px;
+    width:50px;
+
     height:2px;
 
-    margin:9px auto 0;
+    margin:
+        9px auto
+        0;
 
     background:#fff;
 
     box-shadow:
-        0 0 6px #fff,
-        0 0 15px #fff;
+        0 0 5px rgba(255,255,255,.35);
 }
 
+
+/* =====================================================
+   HISTORY BOX
+===================================================== */
+
 .wallet-history{
-    min-height:105px;
 
-    background:#050505 !important;
+    width:100%;
 
-    border:1px solid rgba(255,255,255,.7) !important;
+    min-height:115px;
+
+    background:#050505;
+
+    border:1px solid rgba(255,255,255,.48);
 
     border-radius:19px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    color:#888;
+    text-align:center;
+
+    padding:20px;
+
+    color:#777;
 
     font-size:13px;
 
     box-shadow:
-        0 0 6px rgba(255,255,255,.3),
-        inset 0 0 20px rgba(255,255,255,.02);
+        0 0 6px rgba(255,255,255,.08);
 }
 
 
@@ -292,30 +422,31 @@
 
     left:18px;
     right:18px;
-    bottom:18px;
+    bottom:16px;
 
-    height:72px;
+    height:70px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:space-around;
 
-    background:rgba(15,15,18,.94);
+    background:
+        rgba(12,12,14,.96);
 
-    border:1px solid rgba(255,255,255,.35);
+    border:1px solid rgba(255,255,255,.16);
 
     border-radius:24px;
 
     box-shadow:
-        0 10px 35px rgba(0,0,0,.85),
-        0 0 15px rgba(255,255,255,.12),
-        0 0 30px rgba(255,255,255,.05);
+        0 8px 28px rgba(0,0,0,.9);
 
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    backdrop-filter:blur(18px);
 
-    z-index:999999;
+    -webkit-backdrop-filter:blur(18px);
+
+    z-index:99999;
 }
 
 
@@ -330,22 +461,24 @@
 
     border:0 !important;
 
+    outline:none;
+
     background:transparent !important;
 
-    color:rgba(255,255,255,.35) !important;
+    color:#666;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    font-size:28px;
+    font-size:27px;
 
-    padding:0;
+    cursor:pointer;
 
-    transition:.25s ease;
-
-    -webkit-tap-highlight-color:transparent;
+    transition:
+        .2s ease;
 }
 
 
@@ -353,78 +486,67 @@
 
 .bottom-nav .nav-icon{
 
-    font-size:28px;
+    font-size:27px;
 
-    color:rgba(255,255,255,.40);
+    color:#666;
 
-    transition:.25s ease;
-
-    filter:none;
+    transition:
+        .2s ease;
 }
 
 
 /* =====================================================
-   ACTIVE PAGE GLOW
+   ACTIVE WALLET
 ===================================================== */
 
-.bottom-nav .nav-item.active .nav-icon{
+.bottom-nav
+.nav-item.active
+.nav-icon{
 
-    color:#fff !important;
+    color:#fff;
 
     text-shadow:
-        0 0 5px #fff,
-        0 0 12px #fff,
-        0 0 24px rgba(255,255,255,.85),
-        0 0 40px rgba(255,255,255,.45);
+        0 0 4px rgba(255,255,255,.6),
+        0 0 10px rgba(255,255,255,.25);
 
-    transform:scale(1.10);
-}
-
-
-/* ACTIVE BUTTON GLOW */
-
-.bottom-nav .nav-item.active{
-
-    color:#fff !important;
-
-    filter:
-        drop-shadow(0 0 6px #fff)
-        drop-shadow(0 0 12px rgba(255,255,255,.7));
+    transform:scale(1.06);
 }
 
 
 /* ACTIVE DOT */
 
-.bottom-nav .nav-item.active::after{
+.bottom-nav
+.nav-item.active::after{
 
     content:"";
 
     position:absolute;
 
     bottom:2px;
+
     left:50%;
 
     width:5px;
     height:5px;
 
-    transform:translateX(-50%);
-
-    background:#fff;
+    transform:
+        translateX(-50%);
 
     border-radius:50%;
 
+    background:#fff;
+
     box-shadow:
-        0 0 6px #fff,
-        0 0 14px #fff,
-        0 0 25px rgba(255,255,255,.8);
+        0 0 5px rgba(255,255,255,.55);
 }
 
 
-/* TOUCH EFFECT */
+/* TOUCH */
 
-.bottom-nav .nav-item:active{
+.bottom-nav
+.nav-item:active{
 
-    transform:scale(.88);
+    transform:scale(.90);
 }
 
 
@@ -435,51 +557,94 @@
 @media(max-width:500px){
 
     #walletPage{
-        padding:20px 15px 110px;
+
+        padding:
+            20px
+            15px
+            110px;
+    }
+
+    .wallet-title{
+
+        font-size:25px;
+
+        margin-bottom:22px;
     }
 
     .wallet-balance{
-        padding:21px 17px 18px;
+
+        padding:
+            21px
+            17px
+            19px;
+
         border-radius:23px;
     }
 
     .balance-amount{
+
         font-size:38px;
     }
 
     .wallet-btn{
+
         height:46px;
+
+        font-size:13px;
     }
 
     .wallet-stat{
+
         min-height:95px;
+
+        padding:17px;
     }
 
     .stat-value{
+
         font-size:20px;
     }
 
     .bottom-nav{
+
         left:14px;
         right:14px;
+
         bottom:14px;
-        height:70px;
+
+        height:68px;
+
         border-radius:23px;
     }
-
 }
 
 </style>
 
+</head>
+
+
+<body>
+
 
 <!-- =====================================================
-     WALLET CONTENT
+     WALLET PAGE
 ===================================================== -->
+
+<section id="walletPage">
 
 <div class="wallet-wrap">
 
 
-    <!-- BALANCE -->
+    <!-- TITLE -->
+
+    <div class="wallet-title">
+        My Wallet
+    </div>
+
+
+    <!-- =================================================
+         BALANCE
+    ================================================== -->
 
     <div class="wallet-balance">
 
@@ -490,6 +655,7 @@
         <div class="balance-amount">
             ₹0.00
         </div>
+
 
         <div class="balance-line"></div>
 
@@ -592,7 +758,9 @@
 
 
     <div class="wallet-history">
+
         No wallet transactions yet.
+
     </div>
 
 
@@ -620,7 +788,7 @@
     </button>
 
 
-    <!-- WALLET ACTIVE -->
+    <!-- WALLET -->
 
     <button
         class="nav-item active"
@@ -650,7 +818,6 @@
 
 </nav>
 
-
 </section>
 
 
@@ -676,21 +843,24 @@ function withdrawMoney(){
 
 function goHome(){
 
-    window.location.href = "index.html";
+    window.location.href =
+        "index.html";
 
 }
 
 
 function goWallet(){
 
-    window.location.href = "wallet.html";
+    window.location.href =
+        "wallet.html";
 
 }
 
 
 function goProfile(){
 
-    window.location.href = "profile.html";
+    window.location.href =
+        "profile.html";
 
 }
 
