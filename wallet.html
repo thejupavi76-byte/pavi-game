@@ -12,20 +12,22 @@
 </head>
 
 <body>
-    
-<!-- ================= PREMIUM WALLET PAGE ================= -->
 
 <section id="walletPage">
 
 <style>
-/* ===== WALLET PREMIUM BLACK & WHITE ===== */
+
+/* =====================================================
+   WALLET PAGE
+===================================================== */
 
 #walletPage{
-    min-height:calc(100vh - 82px);
+    min-height:100vh;
     background:#000 !important;
     color:#fff !important;
-    padding:22px 16px 105px;
+    padding:22px 16px 115px;
     font-family:'Chakra Petch',sans-serif;
+    box-sizing:border-box;
 }
 
 .wallet-wrap{
@@ -33,41 +35,10 @@
     margin:auto;
 }
 
-/* HEADER */
 
-.wallet-top{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:25px;
-}
-
-.wallet-back{
-    width:42px;
-    height:42px;
-    border:1px solid #fff;
-    border-radius:14px;
-    background:#050505 !important;
-    color:#fff !important;
-    font-size:24px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:
-        0 0 6px #fff,
-        0 0 18px rgba(255,255,255,.35);
-}
-
-.wallet-title{
-    font-size:27px;
-    font-weight:700;
-    letter-spacing:.5px;
-    text-shadow:
-        0 0 6px #fff,
-        0 0 16px rgba(255,255,255,.6);
-}
-
-/* BALANCE CARD */
+/* =====================================================
+   BALANCE CARD
+===================================================== */
 
 .wallet-balance{
     position:relative;
@@ -90,18 +61,26 @@
         0 0 7px #fff,
         0 0 20px rgba(255,255,255,.35),
         inset 0 0 25px rgba(255,255,255,.04);
+
+    box-sizing:border-box;
 }
 
 .wallet-balance::before{
     content:"";
+
     position:absolute;
     top:-80px;
     right:-80px;
+
     width:180px;
     height:180px;
+
     border-radius:50%;
+
     border:1px solid rgba(255,255,255,.25);
-    box-shadow:0 0 25px rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.15);
 }
 
 .balance-label{
@@ -132,6 +111,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     margin:12px 0;
 }
 
@@ -145,17 +125,23 @@
     font-weight:600;
 }
 
-/* BUTTONS */
+
+/* =====================================================
+   WALLET BUTTONS
+===================================================== */
 
 .wallet-actions{
     display:grid;
     grid-template-columns:1fr 1fr;
+
     gap:12px;
+
     margin-top:20px;
 }
 
 .wallet-btn{
     height:48px;
+
     border-radius:14px;
 
     background:#050505 !important;
@@ -183,12 +169,17 @@
         0 0 30px rgba(255,255,255,.6);
 }
 
-/* STATS */
+
+/* =====================================================
+   STATS
+===================================================== */
 
 .wallet-stats{
     display:grid;
     grid-template-columns:1fr 1fr;
+
     gap:13px;
+
     margin-top:18px;
 }
 
@@ -198,6 +189,7 @@
     background:#050505 !important;
 
     border:1px solid rgba(255,255,255,.8) !important;
+
     border-radius:19px;
 
     padding:18px;
@@ -209,12 +201,17 @@
     box-shadow:
         0 0 6px rgba(255,255,255,.4),
         0 0 18px rgba(255,255,255,.12);
+
+    box-sizing:border-box;
 }
 
 .stat-label{
     color:#999;
+
     font-size:12px;
+
     margin-bottom:9px;
+
     letter-spacing:1px;
 }
 
@@ -227,10 +224,14 @@
         0 0 14px rgba(255,255,255,.4);
 }
 
-/* HISTORY */
+
+/* =====================================================
+   HISTORY
+===================================================== */
 
 .history-title{
     text-align:center;
+
     margin:30px 0 15px;
 
     font-size:21px;
@@ -243,6 +244,7 @@
 
 .history-title::after{
     content:"";
+
     display:block;
 
     width:55px;
@@ -263,6 +265,7 @@
     background:#050505 !important;
 
     border:1px solid rgba(255,255,255,.7) !important;
+
     border-radius:19px;
 
     display:flex;
@@ -270,6 +273,7 @@
     justify-content:center;
 
     color:#888;
+
     font-size:13px;
 
     box-shadow:
@@ -277,16 +281,161 @@
         inset 0 0 20px rgba(255,255,255,.02);
 }
 
-/* MOBILE */
+
+/* =====================================================
+   PREMIUM BOTTOM NAVIGATION
+===================================================== */
+
+.bottom-nav{
+
+    position:fixed;
+
+    left:18px;
+    right:18px;
+    bottom:18px;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-around;
+
+    background:rgba(15,15,18,.94);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-radius:24px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.85),
+        0 0 15px rgba(255,255,255,.12),
+        0 0 30px rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    z-index:999999;
+}
+
+
+/* NAV BUTTON */
+
+.bottom-nav .nav-item{
+
+    position:relative;
+
+    width:70px;
+    height:58px;
+
+    border:0 !important;
+
+    background:transparent !important;
+
+    color:rgba(255,255,255,.35) !important;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    padding:0;
+
+    transition:.25s ease;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+
+/* ICON */
+
+.bottom-nav .nav-icon{
+
+    font-size:28px;
+
+    color:rgba(255,255,255,.40);
+
+    transition:.25s ease;
+
+    filter:none;
+}
+
+
+/* =====================================================
+   ACTIVE PAGE GLOW
+===================================================== */
+
+.bottom-nav .nav-item.active .nav-icon{
+
+    color:#fff !important;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #fff,
+        0 0 24px rgba(255,255,255,.85),
+        0 0 40px rgba(255,255,255,.45);
+
+    transform:scale(1.10);
+}
+
+
+/* ACTIVE BUTTON GLOW */
+
+.bottom-nav .nav-item.active{
+
+    color:#fff !important;
+
+    filter:
+        drop-shadow(0 0 6px #fff)
+        drop-shadow(0 0 12px rgba(255,255,255,.7));
+}
+
+
+/* ACTIVE DOT */
+
+.bottom-nav .nav-item.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:2px;
+    left:50%;
+
+    width:5px;
+    height:5px;
+
+    transform:translateX(-50%);
+
+    background:#fff;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 6px #fff,
+        0 0 14px #fff,
+        0 0 25px rgba(255,255,255,.8);
+}
+
+
+/* TOUCH EFFECT */
+
+.bottom-nav .nav-item:active{
+
+    transform:scale(.88);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:500px){
 
     #walletPage{
-        padding:20px 15px 100px;
-    }
-
-    .wallet-title{
-        font-size:25px;
+        padding:20px 15px 110px;
     }
 
     .wallet-balance{
@@ -309,26 +458,25 @@
     .stat-value{
         font-size:20px;
     }
+
+    .bottom-nav{
+        left:14px;
+        right:14px;
+        bottom:14px;
+        height:70px;
+        border-radius:23px;
+    }
+
 }
+
 </style>
 
 
+<!-- =====================================================
+     WALLET CONTENT
+===================================================== -->
+
 <div class="wallet-wrap">
-
-    <!-- WALLET HEADER -->
-
-    <div class="wallet-top">
-
-        <div class="wallet-back"
-             onclick="showHome()">
-            ‹
-        </div>
-
-        <div class="wallet-title">
-            My Wallet
-        </div>
-
-    </div>
 
 
     <!-- BALANCE -->
@@ -345,7 +493,9 @@
 
         <div class="balance-line"></div>
 
+
         <div class="money-row">
+
             <div class="money-name">
                 Win Money
             </div>
@@ -353,9 +503,12 @@
             <div class="money-value">
                 ₹0.00
             </div>
+
         </div>
 
+
         <div class="money-row">
+
             <div class="money-name">
                 Join Money
             </div>
@@ -363,19 +516,29 @@
             <div class="money-value">
                 ₹0.00
             </div>
+
         </div>
 
 
+        <!-- BUTTONS -->
+
         <div class="wallet-actions">
 
-            <button class="wallet-btn"
-                    onclick="addMoney()">
+            <button
+                class="wallet-btn"
+                onclick="addMoney()">
+
                 ADD MONEY
+
             </button>
 
-            <button class="wallet-btn"
-                    onclick="withdrawMoney()">
+
+            <button
+                class="wallet-btn"
+                onclick="withdrawMoney()">
+
                 WITHDRAW
+
             </button>
 
         </div>
@@ -383,9 +546,12 @@
     </div>
 
 
-    <!-- STATS -->
+    <!-- =================================================
+         STATS
+    ================================================== -->
 
     <div class="wallet-stats">
+
 
         <div class="wallet-stat">
 
@@ -412,39 +578,124 @@
 
         </div>
 
+
     </div>
 
 
-    <!-- HISTORY -->
+    <!-- =================================================
+         HISTORY
+    ================================================== -->
 
     <div class="history-title">
         WALLET HISTORY
     </div>
 
+
     <div class="wallet-history">
         No wallet transactions yet.
     </div>
 
+
 </div>
+
+
+<!-- =====================================================
+     BOTTOM NAVIGATION
+===================================================== -->
+
+<nav class="bottom-nav">
+
+
+    <!-- HOME -->
+
+    <button
+        class="nav-item"
+        data-page="home"
+        onclick="goHome()">
+
+        <span class="nav-icon">
+            ⌂
+        </span>
+
+    </button>
+
+
+    <!-- WALLET ACTIVE -->
+
+    <button
+        class="nav-item active"
+        data-page="wallet"
+        onclick="goWallet()">
+
+        <span class="nav-icon">
+            ▣
+        </span>
+
+    </button>
+
+
+    <!-- PROFILE -->
+
+    <button
+        class="nav-item"
+        data-page="profile"
+        onclick="goProfile()">
+
+        <span class="nav-icon">
+            ♟
+        </span>
+
+    </button>
+
+
+</nav>
+
 
 </section>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
-/* ===== WALLET BUTTONS ===== */
-
 function addMoney(){
+
     alert("Add Money");
+
 }
+
 
 function withdrawMoney(){
+
     alert("Withdraw");
+
 }
 
-function showHome(){
+
+function goHome(){
+
     window.location.href = "index.html";
+
 }
-  
+
+
+function goWallet(){
+
+    window.location.href = "wallet.html";
+
+}
+
+
+function goProfile(){
+
+    window.location.href = "profile.html";
+
+}
+
 </script>
-    
+
+
+</body>
+</html>
