@@ -10,879 +10,626 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
+html{
     background:#000;
     color:#fff;
-    font-family:Arial,sans-serif;
-    min-height:100%;
+    scroll-behavior:smooth;
 }
 
 body{
-    padding-bottom:82px;
-}
-
-/* ================= HEADER ================= */
-
-.header{
-    height:135px;
-    padding:18px;
-    background:#000;
-    border-bottom:1px solid #333;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    box-shadow:0 3px 18px rgba(255,255,255,.10);
-}
-
-.logo{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#050505;
-    border:1px solid #777;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-
-    box-shadow:
-        0 0 6px #fff,
-        0 0 14px rgba(255,255,255,.35);
-}
-
-.welcome{
-    text-align:center;
-}
-
-.welcome small{
-    font-size:11px;
-    color:#aaa;
-}
-
-.welcome h1{
-    font-size:20px;
-    margin-top:5px;
-    letter-spacing:.7px;
-
-    /* subtle edge glow only */
-    text-shadow:
-        0 0 3px #fff,
-        0 0 7px rgba(255,255,255,.35);
-}
-
-.wallet{
-    background:#050505;
-    border:1px solid #777;
-    padding:13px 15px;
-    border-radius:18px;
-    font-size:16px;
-    font-weight:bold;
-
-    box-shadow:
-        0 0 7px #fff,
-        inset 0 0 10px rgba(255,255,255,.06);
-}
-
-.coin{
-    color:#ffd21f;
-}
-
-/* ================= BANNER ================= */
-
-.banner{
-    margin:22px 18px 0;
-    height:155px;
-    border-radius:18px;
-    background:#080808;
-    border:1px solid #777;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-    box-shadow:
-        0 0 7px #fff,
-        0 0 20px rgba(255,255,255,.20);
-}
-
-.banner h2{
-    font-size:27px;
-    letter-spacing:.8px;
-
-    /* small premium glow */
-    text-shadow:
-        0 0 3px #fff,
-        0 0 8px rgba(255,255,255,.45);
-}
-
-.banner p{
-    margin-top:9px;
-    color:#aaa;
-    font-size:14px;
-}
-
-/* ================= SECTION TITLES ================= */
-
-.section-title{
-    text-align:center;
-    font-size:22px;
-    margin:30px 0 20px;
-
-    text-shadow:
-        0 0 3px #fff,
-        0 0 8px rgba(255,255,255,.35);
-}
-
-/* ================= MATCHES ================= */
-
-.matches{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    padding:0 16px;
-}
-
-.match{
-    height:145px;
-    border-radius:14px;
-    background:#080808;
-    border:1px solid #555;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    box-shadow:
-        0 0 6px rgba(255,255,255,.65),
-        inset 0 0 12px rgba(255,255,255,.03);
-}
-
-.match-icon{
-    width:60px;
-    height:60px;
-    border-radius:14px;
-    background:#0a0a0a;
-    border:1px solid #777;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:34px;
-    margin-bottom:12px;
-
-    box-shadow:
-        0 0 7px rgba(255,255,255,.55);
-}
-
-.match span{
-    font-size:14px;
-    font-weight:bold;
-}
-
-/* ================= TABS ================= */
-
-.tabs{
-    margin:0 16px 25px;
-    display:flex;
-    border-radius:10px;
-    overflow:hidden;
-    border:1px solid #555;
-}
-
-.tab{
-    width:50%;
-    padding:16px 5px;
-    text-align:center;
-
-    background:#111;
-    color:#999;
-
-    font-size:15px;
-    font-weight:bold;
-}
-
-.tab.active{
-    background:#fff;
-    color:#000;
-
-    box-shadow:
-        0 0 8px #fff;
-}
-
-/* ================= GAMES ================= */
-
-.games{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px 12px;
-    padding:0 16px;
-}
-
-.game{
-    text-align:center;
-    cursor:pointer;
-}
-
-.game-img{
-    height:175px;
-    border-radius:15px;
-    position:relative;
-    overflow:hidden;
-
-    background:#050505;
-    border:1px solid #777;
-
-    box-shadow:
-        0 0 7px #fff,
-        0 0 18px rgba(255,255,255,.22);
-}
-
-/* IMAGE */
-
-.game-img img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-/* DARK BOTTOM OVERLAY */
-
-.game-img::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        to bottom,
-        transparent 50%,
-        rgba(0,0,0,.15) 65%,
-        rgba(0,0,0,.85) 100%
-    );
-
-    pointer-events:none;
-}
-
-/* TITLE INSIDE IMAGE */
-
-.game-title{
-    position:absolute;
-    z-index:3;
-
-    bottom:12px;
-    left:0;
-    width:100%;
-
-    padding:0 3px;
-
-    text-align:center;
-
+    background:
+        radial-gradient(circle at 50% 0%,rgba(255,255,255,.06),transparent 32%),
+        #000;
     color:#fff;
-    font-size:15px;
-    font-weight:900;
-    letter-spacing:.4px;
-
-    text-shadow:
-        0 0 3px #fff,
-        0 0 7px rgba(255,255,255,.65);
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+    padding-bottom:85px;
 }
 
-/* ================= BOTTOM NAV ================= */
+/* =========================
+   GLOBAL
+========================= */
 
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:78px;
-
-    background:#050505;
-    border-top:1px solid #444;
-
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-
-    z-index:100;
-
-    box-shadow:
-        0 -4px 18px rgba(255,255,255,.10);
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
 }
 
-.nav-item{
-    text-align:center;
-    color:#777;
-    font-size:12px;
-    cursor:pointer;
+button{
+    font-family:inherit;
 }
-
-.nav-icon{
-    font-size:25px;
-    margin-bottom:4px;
-
-    filter:drop-shadow(0 0 3px #fff);
-}
-
-.nav-item.active{
-    color:#fff;
-
-    text-shadow:
-        0 0 5px #fff;
-}
-
-/* ================= PAGES ================= */
 
 .page{
     display:none;
+    min-height:calc(100vh - 85px);
+    padding:20px 16px 30px;
 }
 
 .page.active{
     display:block;
 }
 
-<!-- =====================================================
-     PAVI GAME - PREMIUM BLACK PROFILE PAGE
-     Replace your existing PROFILE PAGE section with this
-===================================================== -->
-
-<style>
+.container{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+}
 
 /* =========================
-   PREMIUM PROFILE THEME
+   PREMIUM GLOW
 ========================= */
 
-#profilePage{
-    min-height:100vh;
-    padding:20px 16px 105px;
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(255,255,255,.09),
-            transparent 38%
-        ),
-        linear-gradient(
-            180deg,
-            #080808 0%,
-            #000 55%,
-            #050505 100%
-        );
-    color:#fff;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-#profilePage .profile-top{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:28px;
-}
-
-#profilePage .back-btn{
-    width:52px;
-    height:52px;
-
-    border-radius:16px;
-
-    background:#050505;
-    color:#fff;
-
-    border:1px solid rgba(255,255,255,.45);
-
-    font-size:32px;
-    line-height:1;
-
-    box-shadow:
-        0 0 7px rgba(255,255,255,.30),
-        0 0 18px rgba(255,255,255,.10);
-
-    cursor:pointer;
-}
-
-#profilePage .back-btn:active{
-    transform:scale(.94);
-}
-
-#profilePage .profile-heading{
-    font-size:27px;
-    font-weight:800;
-
-    color:#fff;
-
+.glow{
     text-shadow:
         0 0 5px #fff,
-        0 0 15px rgba(255,255,255,.40);
+        0 0 12px rgba(255,255,255,.65),
+        0 0 25px rgba(255,255,255,.25);
 }
 
-
-/* =========================
-   PROFILE MAIN CARD
-========================= */
-
-#profilePage .profile-card{
-    position:relative;
-
-    padding:25px 20px;
-
+.premium-card{
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.075),
-            rgba(255,255,255,.012)
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.015)
         );
-
-    border:1px solid rgba(255,255,255,.48);
-
-    border-radius:26px;
-
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:24px;
     box-shadow:
-        0 0 8px rgba(255,255,255,.30),
-        0 0 25px rgba(255,255,255,.10),
+        0 0 8px rgba(255,255,255,.18),
+        0 0 25px rgba(255,255,255,.08),
         inset 0 0 25px rgba(255,255,255,.025);
-
-    overflow:hidden;
-
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
 }
-
-
-/* top white glowing line */
-
-#profilePage .profile-card::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:15%;
-    right:15%;
-
-    height:2px;
-
-    background:#fff;
-
-    box-shadow:
-        0 0 5px #fff,
-        0 0 15px #fff,
-        0 0 30px rgba(255,255,255,.55);
-
-    border-radius:50%;
-}
-
 
 /* =========================
-   USER DETAILS
+   TOP HEADER
 ========================= */
 
-#profilePage .user-info{
+.top-header{
     display:flex;
     align-items:center;
-    gap:20px;
+    justify-content:space-between;
+    margin-bottom:24px;
 }
 
-#profilePage .avatar{
-    width:105px;
-    height:105px;
-
-    flex-shrink:0;
-
+.back-btn{
+    width:48px;
+    height:48px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.3);
+    background:#050505;
+    color:#fff;
+    font-size:25px;
     display:flex;
     align-items:center;
     justify-content:center;
+    box-shadow:
+        0 0 8px rgba(255,255,255,.18);
+}
 
-    border-radius:25px;
+.page-title{
+    flex:1;
+    margin-left:14px;
+    font-size:25px;
+    font-weight:800;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px rgba(255,255,255,.45);
+}
 
+/* =========================
+   HOME HEADER
+========================= */
+
+.home-header{
+    min-height:185px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin:-20px -16px 25px;
+    padding:25px 22px;
+    border-bottom:1px solid rgba(255,255,255,.25);
     background:
-        linear-gradient(
-            145deg,
-            #252525,
-            #050505
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.07),
+            transparent 60%
         );
+}
 
-    border:1px solid rgba(255,255,255,.65);
-
-    color:#fff;
-
-    font-size:46px;
-    font-weight:900;
-
+.logo-circle{
+    width:82px;
+    height:82px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:#030303;
+    border:1px solid rgba(255,255,255,.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
     box-shadow:
         0 0 8px rgba(255,255,255,.55),
         0 0 25px rgba(255,255,255,.18),
-        inset 0 0 20px rgba(255,255,255,.04);
+        inset 0 0 20px rgba(255,255,255,.05);
 }
 
-#profilePage .user-details{
-    min-width:0;
+.welcome{
+    text-align:center;
+    flex:1;
 }
 
-#profilePage .username-label{
-    color:#999;
-
-    font-size:12px;
-    font-weight:700;
-
-    letter-spacing:1px;
-
+.welcome-small{
+    color:#aaa;
+    font-size:13px;
     margin-bottom:8px;
 }
 
-#profilePage .username{
-    color:#fff;
-
-    font-size:25px;
+.welcome-name{
+    font-size:22px;
     font-weight:900;
-
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-
-    text-shadow:
-        0 0 5px #fff,
-        0 0 13px rgba(255,255,255,.35);
-}
-
-#profilePage .email{
-    color:#999;
-
-    font-size:13px;
-
-    margin-top:8px;
-
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-
-/* =========================
-   DIVIDER
-========================= */
-
-#profilePage .profile-divider{
-    height:1px;
-
-    margin:24px 0;
-
-    background:rgba(255,255,255,.16);
-
-    box-shadow:
-        0 0 8px rgba(255,255,255,.08);
-}
-
-
-/* =========================
-   WALLET BALANCE
-========================= */
-
-#profilePage .balance-label{
-    color:#999;
-
-    font-size:12px;
-    font-weight:700;
-
     letter-spacing:1px;
-
-    margin-bottom:10px;
 }
 
-#profilePage .balance{
-    color:#fff;
-
-    font-size:35px;
-    font-weight:900;
-
-    text-shadow:
-        0 0 6px #fff,
-        0 0 17px rgba(255,255,255,.40);
+.wallet-mini{
+    min-width:118px;
+    padding:14px 12px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.45);
+    background:#030303;
+    text-align:center;
+    box-shadow:
+        0 0 8px rgba(255,255,255,.3),
+        0 0 20px rgba(255,255,255,.1);
 }
 
+.wallet-mini span{
+    display:block;
+    color:#aaa;
+    font-size:10px;
+    margin-bottom:5px;
+}
+
+.wallet-mini strong{
+    font-size:18px;
+}
 
 /* =========================
    SECTION TITLE
 ========================= */
 
-#profilePage .section-title{
-    margin:30px 0 17px;
-
-    font-size:21px;
-    font-weight:900;
-
-    color:#fff;
-
-    text-shadow:
-        0 0 5px #fff,
-        0 0 13px rgba(255,255,255,.30);
+.section-title{
+    font-size:20px;
+    margin:25px 0 14px;
+    font-weight:800;
 }
 
+.section-title::after{
+    content:"";
+    display:block;
+    width:55px;
+    height:2px;
+    background:#fff;
+    margin-top:7px;
+    box-shadow:
+        0 0 7px #fff,
+        0 0 15px rgba(255,255,255,.6);
+}
+
+/* =========================
+   GAME CARDS
+========================= */
+
+.games-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.game-card{
+    overflow:hidden;
+    position:relative;
+    border-radius:20px;
+    background:#050505;
+    border:1px solid rgba(255,255,255,.32);
+    box-shadow:
+        0 0 7px rgba(255,255,255,.15),
+        inset 0 0 15px rgba(255,255,255,.025);
+}
+
+.game-image{
+    height:145px;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,.05),
+            rgba(0,0,0,.9)
+        ),
+        #080808;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+}
+
+.game-info{
+    padding:13px;
+}
+
+.game-title{
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.game-sub{
+    color:#888;
+    font-size:11px;
+}
+
+.play-btn{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.5);
+    background:#050505;
+    color:#fff;
+    font-weight:700;
+    box-shadow:0 0 8px rgba(255,255,255,.15);
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-main{
+    padding:22px 18px;
+    margin-bottom:24px;
+}
+
+.profile-top{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.avatar{
+    width:105px;
+    height:105px;
+    flex-shrink:0;
+    border-radius:25px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.16),
+            rgba(255,255,255,.02)
+        );
+    border:1px solid rgba(255,255,255,.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:46px;
+    font-weight:900;
+    box-shadow:
+        0 0 10px rgba(255,255,255,.35),
+        0 0 28px rgba(255,255,255,.1),
+        inset 0 0 20px rgba(255,255,255,.04);
+}
+
+.user-details{
+    min-width:0;
+}
+
+.label{
+    color:#888;
+    font-size:11px;
+    letter-spacing:1px;
+    margin-bottom:6px;
+}
+
+.username{
+    font-size:25px;
+    font-weight:900;
+    margin-bottom:8px;
+    word-break:break-word;
+}
+
+.email{
+    color:#aaa;
+    font-size:12px;
+    word-break:break-word;
+}
+
+.divider{
+    height:1px;
+    background:rgba(255,255,255,.12);
+    margin:22px 0;
+}
+
+.balance-label{
+    color:#888;
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:7px;
+}
+
+.balance{
+    font-size:32px;
+    font-weight:900;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 18px rgba(255,255,255,.35);
+}
 
 /* =========================
    STATISTICS
 ========================= */
 
-#profilePage .stats{
+.stats-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:11px;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
 }
 
-#profilePage .stat{
-    min-height:145px;
-
+.stat-card{
+    min-height:125px;
+    padding:17px 8px;
+    text-align:center;
     display:flex;
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
-
-    text-align:center;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.065),
-            rgba(255,255,255,.008)
-        );
-
-    border:1px solid rgba(255,255,255,.28);
-
     border-radius:20px;
-
+    background:#050505;
+    border:1px solid rgba(255,255,255,.25);
     box-shadow:
-        0 0 9px rgba(255,255,255,.10),
-        inset 0 0 15px rgba(255,255,255,.02);
-
-    transition:.25s ease;
+        0 0 8px rgba(255,255,255,.12);
 }
 
-#profilePage .stat:active{
-    transform:scale(.97);
-}
-
-#profilePage .stat-icon{
-    font-size:27px;
-
-    margin-bottom:13px;
-
-    filter:
-        drop-shadow(0 0 5px #fff);
-}
-
-#profilePage .stat-number{
+.stat-icon{
     font-size:25px;
+    margin-bottom:9px;
+}
+
+.stat-number{
+    font-size:23px;
     font-weight:900;
-
-    color:#fff;
-
-    text-shadow:
-        0 0 5px #fff;
+    margin-bottom:6px;
 }
 
-#profilePage .stat-label{
-    color:#999;
-
+.stat-label{
+    color:#888;
     font-size:11px;
-
-    margin-top:9px;
 }
 
-
 /* =========================
-   ACCOUNT CARD
+   ACCOUNT MENU
 ========================= */
 
-#profilePage .account-card{
-    padding:4px 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.055),
-            rgba(255,255,255,.008)
-        );
-
-    border:1px solid rgba(255,255,255,.28);
-
-    border-radius:24px;
-
-    box-shadow:
-        0 0 12px rgba(255,255,255,.10),
-        inset 0 0 20px rgba(255,255,255,.015);
+.account-box{
+    overflow:hidden;
 }
 
-
-/* =========================
-   ACCOUNT OPTIONS
-========================= */
-
-#profilePage .account-option{
+.menu-item{
     width:100%;
-
+    min-height:82px;
+    padding:14px 16px;
+    border:0;
+    border-bottom:1px solid rgba(255,255,255,.09);
+    background:transparent;
+    color:#fff;
     display:flex;
     align-items:center;
-
-    padding:17px 0;
-
-    background:transparent;
-
-    border:0;
-
-    color:#fff;
-
     text-align:left;
-
-    cursor:pointer;
 }
 
-#profilePage .account-option + .account-option{
-    border-top:1px solid rgba(255,255,255,.10);
+.menu-item:last-child{
+    border-bottom:0;
 }
 
-#profilePage .option-icon{
-    width:55px;
-    height:55px;
+.menu-item:active{
+    background:rgba(255,255,255,.06);
+}
 
-    flex-shrink:0;
-
+.menu-icon{
+    width:50px;
+    height:50px;
+    border-radius:16px;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    border-radius:16px;
-
-    background:#080808;
-
-    border:1px solid rgba(255,255,255,.30);
-
-    font-size:23px;
-
+    font-size:22px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);
     box-shadow:
-        0 0 8px rgba(255,255,255,.15);
+        0 0 8px rgba(255,255,255,.08);
 }
 
-#profilePage .option-name{
+.menu-text{
     flex:1;
+    margin-left:15px;
+}
 
-    margin-left:18px;
-
-    color:#fff;
-
-    font-size:15px;
+.menu-title{
+    font-size:14px;
     font-weight:800;
 }
 
-#profilePage .option-arrow{
-    color:#888;
-
-    font-size:31px;
-
-    transition:.2s;
-}
-
-#profilePage .account-option:active{
-    transform:scale(.98);
-}
-
-#profilePage .account-option:active .option-arrow{
-    color:#fff;
-
-    text-shadow:
-        0 0 8px #fff;
-}
-
-
-/* =========================
-   LOGOUT
-========================= */
-
-#profilePage .logout .option-name{
-    color:#fff;
-}
-
-#profilePage .logout .option-icon{
-    border-color:rgba(255,255,255,.35);
-}
-
-
-/* =========================
-   BOTTOM NAV
-========================= */
-
-#profilePage .profile-bottom-nav{
-    position:fixed;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:82px;
-
-    display:grid;
-    grid-template-columns:
-        repeat(3,1fr);
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(10,10,10,.97),
-            #000
-        );
-
-    border-top:1px solid rgba(255,255,255,.25);
-
-    box-shadow:
-        0 -5px 25px rgba(255,255,255,.08);
-
-    z-index:9999;
-}
-
-#profilePage .nav-item{
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:5px;
-
+.menu-desc{
     color:#777;
-
-    cursor:pointer;
+    font-size:10px;
+    margin-top:5px;
 }
 
-#profilePage .nav-icon{
+.menu-arrow{
+    color:#aaa;
     font-size:25px;
 }
 
-#profilePage .nav-label{
-    font-size:11px;
+/* =========================
+   WALLET PAGE
+========================= */
+
+.wallet-card{
+    padding:25px 20px;
+    text-align:center;
+    margin-bottom:20px;
 }
 
-#profilePage .nav-item.active{
-    color:#fff;
+.wallet-symbol{
+    font-size:50px;
+    margin-bottom:10px;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.5));
+}
 
+.wallet-amount{
+    font-size:38px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.wallet-note{
+    color:#888;
+    font-size:12px;
+}
+
+.wallet-action{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:20px;
+}
+
+.action-btn{
+    padding:14px;
+    border-radius:14px;
+    background:#050505;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.35);
+    font-weight:800;
+    box-shadow:0 0 8px rgba(255,255,255,.12);
+}
+
+/* =========================
+   TRANSACTIONS
+========================= */
+
+.empty-box{
+    padding:35px 20px;
+    text-align:center;
+}
+
+.empty-icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.empty-title{
+    font-size:17px;
+    font-weight:800;
+}
+
+.empty-text{
+    color:#777;
+    font-size:12px;
+    margin-top:7px;
+}
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-nav{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:82px;
+    z-index:9999;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.98),
+            rgba(5,5,5,.95)
+        );
+    border-top:1px solid rgba(255,255,255,.22);
+    box-shadow:
+        0 -5px 25px rgba(255,255,255,.06);
+    backdrop-filter:blur(15px);
+}
+
+.nav-btn{
+    width:33.333%;
+    height:100%;
+    border:0;
+    background:transparent;
+    color:#666;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+
+.nav-icon{
+    font-size:24px;
+    transition:.2s;
+}
+
+.nav-label{
+    font-size:10px;
+    font-weight:700;
+}
+
+.nav-btn.active{
+    color:#fff;
     text-shadow:
-        0 0 6px #fff,
+        0 0 5px #fff,
         0 0 14px rgba(255,255,255,.55);
 }
 
-#profilePage .nav-item.active .nav-icon{
-    filter:
-        drop-shadow(0 0 7px #fff);
+.nav-btn.active .nav-icon{
+    transform:translateY(-2px);
+    filter:drop-shadow(0 0 7px rgba(255,255,255,.75));
 }
 
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:100px;
+    transform:translateX(-50%) translateY(20px);
+    background:#080808;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:14px;
+    padding:12px 18px;
+    font-size:12px;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:10000;
+    box-shadow:
+        0 0 10px rgba(255,255,255,.2);
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
 
 /* =========================
    MOBILE
@@ -890,566 +637,76 @@ body{
 
 @media(max-width:380px){
 
-    #profilePage{
-        padding:16px 12px 100px;
+    .page{
+        padding:16px 12px 25px;
     }
 
-    #profilePage .profile-heading{
-        font-size:24px;
+    .home-header{
+        margin:-16px -12px 20px;
+        padding:22px 12px;
+        min-height:165px;
     }
 
-    #profilePage .avatar{
-        width:85px;
-        height:85px;
-        font-size:38px;
+    .logo-circle{
+        width:65px;
+        height:65px;
+        font-size:30px;
     }
 
-    #profilePage .username{
-        font-size:21px;
+    .welcome-name{
+        font-size:17px;
     }
 
-    #profilePage .email{
-        font-size:11px;
+    .wallet-mini{
+        min-width:95px;
+        padding:11px 8px;
     }
 
-    #profilePage .stats{
+    .wallet-mini strong{
+        font-size:15px;
+    }
+
+    .profile-top{
+        gap:12px;
+    }
+
+    .avatar{
+        width:82px;
+        height:82px;
+        font-size:35px;
+    }
+
+    .username{
+        font-size:20px;
+    }
+
+    .email{
+        font-size:10px;
+    }
+
+    .balance{
+        font-size:28px;
+    }
+
+    .stats-grid{
         gap:7px;
     }
 
-    #profilePage .stat{
-        min-height:125px;
+    .stat-card{
+        min-height:110px;
+        padding:10px 4px;
     }
 
-    #profilePage .stat-number{
-        font-size:21px;
+    .stat-icon{
+        font-size:20px;
     }
 
-    #profilePage .option-name{
-        font-size:14px;
-    }
-}
-
-</style>
-
-
-<!-- =====================================================
-     PROFILE PAGE
-===================================================== -->
-
-<section id="profilePage">
-
-    <!-- HEADER -->
-
-    <div class="profile-top">
-
-        <button
-            class="back-btn"
-            onclick="history.back()">
-            ‹
-        </button>
-
-        <div class="profile-heading">
-            My Profile
-        </div>
-
-    </div>
-
-
-    <!-- PROFILE CARD -->
-
-    <div class="profile-card">
-
-        <div class="user-info">
-
-            <div class="avatar">
-                P
-            </div>
-
-            <div class="user-details">
-
-                <div class="username-label">
-                    USERNAME
-                </div>
-
-                <div class="username">
-                    Pavilon
-                </div>
-
-                <div class="email">
-                    Your Email
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="profile-divider"></div>
-
-
-        <div class="balance-label">
-            WALLET BALANCE
-        </div>
-
-        <div class="balance">
-            ₹0.00
-        </div>
-
-    </div>
-
-
-    <!-- ACCOUNT STATISTICS -->
-
-    <div class="section-title">
-        Account Statistics
-    </div>
-
-
-    <div class="stats">
-
-        <div class="stat">
-
-            <div class="stat-icon">
-                🎮
-            </div>
-
-            <div class="stat-number">
-                0
-            </div>
-
-            <div class="stat-label">
-                Matches
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-icon">
-                🏆
-            </div>
-
-            <div class="stat-number">
-                0
-            </div>
-
-            <div class="stat-label">
-                Wins
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-icon">
-                ₹
-            </div>
-
-            <div class="stat-number">
-                ₹0.00
-            </div>
-
-            <div class="stat-label">
-                Won
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ACCOUNT -->
-
-    <div class="section-title">
-        Account
-    </div>
-
-
-    <div class="account-card">
-
-
-        <!-- MY WALLET -->
-
-        <button
-            class="account-option"
-            onclick="window.location.href='wallet.php'">
-
-            <div class="option-icon">
-                💳
-            </div>
-
-            <div class="option-name">
-                My Wallet
-            </div>
-
-            <div class="option-arrow">
-                ›
-            </div>
-
-        </button>
-
-
-        <!-- TRANSACTION HISTORY -->
-
-        <button
-            class="account-option"
-            onclick="window.location.href='transactions.php'">
-
-            <div class="option-icon">
-                🧾
-            </div>
-
-            <div class="option-name">
-                Transaction History
-            </div>
-
-            <div class="option-arrow">
-                ›
-            </div>
-
-        </button>
-
-
-        <!-- MY MATCHES -->
-
-        <button
-            class="account-option"
-            onclick="window.location.href='my_matches.php'">
-
-            <div class="option-icon">
-                🎮
-            </div>
-
-            <div class="option-name">
-                My Matches
-            </div>
-
-            <div class="option-arrow">
-                ›
-            </div>
-
-        </button>
-
-
-        <!-- CUSTOMER SUPPORT -->
-
-        <button
-            class="account-option"
-            onclick="window.location.href='customer_support.php'">
-
-            <div class="option-icon">
-                🎧
-            </div>
-
-            <div class="option-name">
-                Customer Support
-            </div>
-
-            <div class="option-arrow">
-                ›
-            </div>
-
-        </button>
-
-
-        <!-- LOGOUT -->
-
-        <button
-            class="account-option logout"
-            onclick="window.location.href='logout.php'">
-
-            <div class="option-icon">
-                ⏻
-            </div>
-
-            <div class="option-name">
-                Logout
-            </div>
-
-            <div class="option-arrow">
-                ›
-            </div>
-
-        </button>
-
-
-    </div>
-
-
-    <!-- BOTTOM NAVIGATION -->
-
-    <div class="profile-bottom-nav">
-
-        <!-- HOME -->
-
-        <div
-            class="nav-item"
-            onclick="window.location.href='index.html'">
-
-            <div class="nav-icon">
-                ⌂
-            </div>
-
-            <div class="nav-label">
-                Home
-            </div>
-
-        </div>
-
-
-        <!-- WALLET -->
-
-        <div
-            class="nav-item"
-            onclick="window.location.href='wallet.php'">
-
-            <div class="nav-icon">
-                ▣
-            </div>
-
-            <div class="nav-label">
-                Wallet
-            </div>
-
-        </div>
-
-
-        <!-- PROFILE -->
-
-        <div
-            class="nav-item active">
-
-            <div class="nav-icon">
-                ●
-            </div>
-
-            <div class="nav-label">
-                Profile
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-/* ================= MOBILE ================= */
-
-@media(max-width:380px){
-
-    .header{
-        padding:15px;
+    .stat-number{
+        font-size:19px;
     }
 
-    .logo{
-        width:48px;
-        height:48px;
-        font-size:23px;
-    }
-
-    .welcome h1{
-        font-size:18px;
-    }
-
-    .wallet{
-        padding:11px 10px;
-        font-size:14px;
-    }
-
-    .game-img{
-        height:155px;
-    }
-
-    .game-title{
-        font-size:13px;
-    }
-}
-    /* =================================
-   PREMIUM BLACK + WHITE PROFILE
-================================= */
-
-#profilePage {
-    background:
-        radial-gradient(circle at 50% 0%, rgba(255,255,255,.08), transparent 40%),
-        #000 !important;
-    color: #fff !important;
-    min-height: calc(100vh - 82px);
-    padding: 22px 16px 105px;
-}
-
-/* PREMIUM MAIN CARD */
-
-#profilePage .simple-card {
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.015)
-    ) !important;
-
-    border: 1px solid rgba(255,255,255,.45) !important;
-    border-radius: 24px !important;
-
-    padding: 24px 20px !important;
-    margin: 15px 0 22px !important;
-
-    box-shadow:
-        0 0 6px rgba(255,255,255,.45),
-        0 0 18px rgba(255,255,255,.16),
-        inset 0 0 20px rgba(255,255,255,.025) !important;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    position: relative;
-    overflow: hidden;
-}
-
-/* WHITE LIGHT ON TOP EDGE */
-
-#profilePage .simple-card::before {
-    content: "";
-    position: absolute;
-
-    top: 0;
-    left: 15%;
-    width: 70%;
-    height: 1px;
-
-    background: #fff;
-
-    box-shadow:
-        0 0 6px #fff,
-        0 0 15px rgba(255,255,255,.7),
-        0 0 30px rgba(255,255,255,.25);
-}
-
-/* HEADINGS */
-
-#profilePage h1,
-#profilePage h2,
-#profilePage h3 {
-    color: #fff !important;
-
-    text-shadow:
-        0 0 5px rgba(255,255,255,.9),
-        0 0 12px rgba(255,255,255,.45);
-}
-
-/* NORMAL TEXT */
-
-#profilePage p {
-    color: #ccc !important;
-    line-height: 1.6;
-}
-
-#profilePage strong {
-    color: #fff !important;
-}
-
-/* PROFILE ITEMS */
-
-#profilePage .profile-item,
-#profilePage .account-item,
-#profilePage .menu-item {
-    background: rgba(255,255,255,.025) !important;
-
-    border: 1px solid rgba(255,255,255,.25) !important;
-    border-radius: 16px !important;
-
-    padding: 16px !important;
-    margin: 12px 0 !important;
-
-    color: #fff !important;
-
-    box-shadow:
-        0 0 8px rgba(255,255,255,.10);
-
-    transition: .25s ease;
-}
-
-/* EDGE GLOW */
-
-#profilePage .profile-item:hover,
-#profilePage .account-item:hover,
-#profilePage .menu-item:hover {
-    border-color: #fff !important;
-
-    box-shadow:
-        0 0 7px rgba(255,255,255,.65),
-        0 0 20px rgba(255,255,255,.20);
-}
-
-/* ICON GLOW */
-
-#profilePage i,
-#profilePage .icon {
-    color: #fff !important;
-
-    filter:
-        drop-shadow(0 0 4px #fff)
-        drop-shadow(0 0 10px rgba(255,255,255,.45));
-}
-
-/* PREMIUM BUTTON */
-
-#profilePage button,
-#profilePage .btn {
-    background: #050505 !important;
-    color: #fff !important;
-
-    border: 1px solid rgba(255,255,255,.65) !important;
-    border-radius: 13px !important;
-
-    padding: 12px 20px !important;
-
-    box-shadow:
-        0 0 7px rgba(255,255,255,.25);
-
-    transition: .25s ease;
-}
-
-#profilePage button:hover,
-#profilePage .btn:hover {
-    background: #fff !important;
-    color: #000 !important;
-
-    box-shadow:
-        0 0 10px #fff,
-        0 0 25px rgba(255,255,255,.45);
-}
-
-/* INPUT */
-
-#profilePage input {
-    background: #000 !important;
-    color: #fff !important;
-
-    border: 1px solid rgba(255,255,255,.35) !important;
-    border-radius: 11px !important;
-
-    padding: 12px !important;
-}
-
-#profilePage input:focus {
-    border-color: #fff !important;
-    outline: none;
-
-    box-shadow:
-        0 0 8px rgba(255,255,255,.5);
-}
-
-/* MOBILE */
-
-@media (max-width:380px) {
-
-    #profilePage {
-        padding: 17px 12px 98px;
-    }
-
-    #profilePage .simple-card {
-        padding: 21px 16px !important;
-        border-radius: 20px !important;
+    .game-image{
+        height:120px;
     }
 }
 </style>
@@ -1457,424 +714,757 @@ body{
 
 <body>
 
+<!-- =====================================================
+     HOME PAGE
+===================================================== -->
 
-<!-- ================= HEADER ================= -->
+<section id="homePage" class="page active">
 
-<header class="header">
+    <div class="container">
 
-    <div class="logo">
-        🎮
-    </div>
+        <div class="home-header">
 
-    <div class="welcome">
-        <small>Welcome Back,</small>
-        <h1>EREN YEAGER</h1>
-    </div>
+            <div class="logo-circle">
+                🎮
+            </div>
 
-    <div class="wallet">
-        <span class="coin">🪙</span> 0.00
-    </div>
-
-</header>
-
-
-<!-- ================= HOME ================= -->
-
-<div id="homePage" class="page active">
-
-    <!-- PAVI GAME -->
-
-    <div class="banner">
-        <div>
-            <h2>⚡ PAVI GAME 🎯</h2>
-            <p>Play • Compete • Win</p>
-        </div>
-    </div>
-
-
-    <!-- MY MATCHES -->
-
-    <h2 class="section-title">
-        My Matches
-    </h2>
-
-    <div class="matches">
-
-        <div class="match">
-            <div class="match-icon">↻</div>
-            <span>Ongoing</span>
-        </div>
-
-        <div class="match">
-            <div class="match-icon">□</div>
-            <span>Upcoming</span>
-        </div>
-
-        <div class="match">
-            <div class="match-icon">✓</div>
-            <span>Completed</span>
-        </div>
-
-    </div>
-
-
-    <!-- ESPORTS -->
-
-    <h2 class="section-title">
-        Esports Games
-    </h2>
-
-
-    <!-- ONLY ONE TAB -->
-
-    <div class="tabs">
-
-        <div class="tab active">
-            TOURNAMENT
-        </div>
-
-        <div class="tab">
-            SOLO
-        </div>
-
-    </div>
-
-
-    <!-- ================= ONLY 4 GAMES ================= -->
-
-    <div class="games">
-
-
-        <!-- FULL MAP -->
-
-        <div class="game"
-             onclick="openGame('FULL MAP')">
-
-            <div class="game-img">
-
-                <img
-                    src="eren.jpg"
-                    alt="FULL MAP"
-                >
-
-                <div class="game-title">
-                    FULL MAP
+            <div class="welcome">
+                <div class="welcome-small">
+                    Welcome Back,
                 </div>
 
+                <div class="welcome-name glow">
+                    EREN YEAGER
+                </div>
+            </div>
+
+            <div class="wallet-mini">
+                <span>WALLET</span>
+                <strong>₹<span id="homeBalance">0.00</span></strong>
             </div>
 
         </div>
 
+        <h2 class="section-title glow">
+            ⚡ PAVI GAME 🎯
+        </h2>
 
-        <!-- CS 1V1 ONETAP -->
+        <div class="premium-card" style="padding:20px;margin-bottom:22px;">
 
-        <div class="game"
-             onclick="openGame('CS 1V1 ONETAP')">
+            <div style="font-size:13px;color:#aaa;margin-bottom:8px;">
+                PREMIUM GAMING ARENA
+            </div>
 
-            <div class="game-img">
+            <div style="font-size:22px;font-weight:900;" class="glow">
+                PLAY • COMPETE • WIN
+            </div>
 
-                <img
-                    src="eren.jpg"
-                    alt="CS 1V1 ONETAP"
-                >
-
-                <div class="game-title">
-                    CS 1V1 ONETAP
-                </div>
-
+            <div style="font-size:11px;color:#666;margin-top:8px;">
+                Choose your game and join the match.
             </div>
 
         </div>
 
+        <h2 class="section-title glow">
+            Reports Games
+        </h2>
 
-        <!-- CS 2V2 ONETAP -->
+        <div class="games-grid">
 
-        <div class="game"
-             onclick="openGame('CS 2V2 ONETAP')">
-
-            <div class="game-img">
-
-                <img
-                    src="eren.jpg"
-                    alt="CS 2V2 ONETAP"
-                >
-
-                <div class="game-title">
-                    CS 2V2 ONETAP
+            <div class="game-card">
+                <div class="game-image">
+                    🎯
                 </div>
 
+                <div class="game-info">
+                    <div class="game-title">
+                        FULL MAP
+                    </div>
+
+                    <div class="game-sub">
+                        Premium Match
+                    </div>
+
+                    <button class="play-btn" onclick="showToast('FULL MAP selected')">
+                        JOIN
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="game-card">
+                <div class="game-image">
+                    🔥
+                </div>
+
+                <div class="game-info">
+                    <div class="game-title">
+                        CS 1V1 ONETAP
+                    </div>
+
+                    <div class="game-sub">
+                        1 vs 1 Match
+                    </div>
+
+                    <button class="play-btn" onclick="showToast('CS 1V1 ONETAP selected')">
+                        JOIN
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="game-card">
+                <div class="game-image">
+                    ⚔️
+                </div>
+
+                <div class="game-info">
+                    <div class="game-title">
+                        CS 2V2 ONETAP
+                    </div>
+
+                    <div class="game-sub">
+                        2 vs 2 Match
+                    </div>
+
+                    <button class="play-btn" onclick="showToast('CS 2V2 ONETAP selected')">
+                        JOIN
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="game-card">
+                <div class="game-image">
+                    👑
+                </div>
+
+                <div class="game-info">
+                    <div class="game-title">
+                        CS 4V4 ONETAP
+                    </div>
+
+                    <div class="game-sub">
+                        4 vs 4 Match
+                    </div>
+
+                    <button class="play-btn" onclick="showToast('CS 4V4 ONETAP selected')">
+                        JOIN
+                    </button>
+                </div>
             </div>
 
         </div>
-
-
-        <!-- CS 4V4 ONETAP -->
-
-        <div class="game"
-             onclick="openGame('CS 4V4 ONETAP')">
-
-            <div class="game-img">
-
-                <img
-                    src="eren.jpg"
-                    alt="CS 4V4 ONETAP"
-                >
-
-                <div class="game-title">
-                    CS 4V4 ONETAP
-                </div>
-
-            </div>
-
-        </div>
-
 
     </div>
 
-</div>
+</section>
 
 
-<!-- ================= WALLET PAGE ================= -->
+<!-- =====================================================
+     WALLET PAGE
+===================================================== -->
 
-<div id="walletPage" class="page">
+<section id="walletPage" class="page">
 
-    <div class="wallet-page">
+    <div class="container">
 
-        <!-- HEADER -->
+        <div class="top-header">
 
-        <div class="wallet-header">
-
-            <a href="#" class="back-btn">
+            <button class="back-btn" onclick="goHome()">
                 ‹
-            </a>
+            </button>
 
-            <h1>My Wallet</h1>
-
-        </div>
-
-
-        <!-- BALANCE TITLE -->
-
-        <div class="balance-title">
-            TOTAL BALANCE
-        </div>
-
-
-        <!-- BALANCE CARD -->
-
-        <div class="balance-card">
-
-            <div class="balance-left">
-
-                <div class="total-amount">
-                    🪙 ₹<span id="balance">0.00</span>
-                </div>
-
-                <div class="money-row">
-                    Win money :
-                    <span class="coin">🪙</span>
-                    ₹<span id="winMoney">0.00</span>
-                </div>
-
-                <div class="money-row">
-                    Join money :
-                    <span class="coin">🪙</span>
-                    ₹<span id="joinMoney">0.00</span>
-                </div>
-
-            </div>
-
-
-            <!-- ACTION BUTTONS -->
-
-            <div class="action-buttons">
-
-                <button
-                    type="button"
-                    class="action-btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#depositModal"
-                >
-                    ADD
-                </button>
-
-                <button
-                    type="button"
-                    class="action-btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#withdrawModal"
-                >
-                    WITHDRAW
-                </button>
-
+            <div class="page-title">
+                My Wallet
             </div>
 
         </div>
 
 
-        <!-- STATS -->
+        <div class="premium-card wallet-card">
 
-        <div class="stats">
-
-            <div>
-
-                <div class="stat-title">
-                    Earnings
-                </div>
-
-                <div class="stat-card">
-                    🪙 ₹<span id="totalDeposits">0.00</span>
-                </div>
-
+            <div class="wallet-symbol">
+                💰
             </div>
 
+            <div class="label">
+                AVAILABLE BALANCE
+            </div>
 
-            <div>
+            <div class="wallet-amount">
+                ₹<span id="walletBalance">0.00</span>
+            </div>
 
-                <div class="stat-title">
-                    PAYOUTS
-                </div>
-
-                <div class="stat-card">
-                    🪙 ₹<span id="totalWithdrawals">0.00</span>
-                </div>
-
+            <div class="wallet-note">
+                Your current gaming wallet balance
             </div>
 
         </div>
 
 
-        <!-- WALLET HISTORY -->
+        <div class="wallet-action">
 
-        <div class="history-title">
-            WALLET HISTORY
+            <button class="action-btn" onclick="showToast('Add Money option')">
+                ＋ Add Money
+            </button>
+
+            <button class="action-btn" onclick="showToast('Withdraw option')">
+                ↓ Withdraw
+            </button>
+
         </div>
 
-        <div id="historyContainer">
 
-            <div class="no-history">
-                No wallet transactions yet.
+        <h2 class="section-title glow">
+            Transaction History
+        </h2>
+
+        <div class="premium-card empty-box">
+
+            <div class="empty-icon">
+                🧾
+            </div>
+
+            <div class="empty-title">
+                No Transactions
+            </div>
+
+            <div class="empty-text">
+                Your transaction history will appear here.
             </div>
 
         </div>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- ================= PROFILE PAGE ================= -->
+<!-- =====================================================
+     PROFILE PAGE
+===================================================== -->
 
-<div id="profilePage" class="page">
+<section id="profilePage" class="page">
 
-    <div class="simple-page">
+    <div class="container">
 
-        <div class="simple-card">
+        <div class="top-header">
 
-            <h2>👤 PROFILE</h2>
+            <button class="back-btn" onclick="goHome()">
+                ‹
+            </button>
 
-            <p>
-                Welcome back,
-            </p>
+            <div class="page-title">
+                My Profile
+            </div>
 
-            <h1 style="margin-top:15px;">
-                EREN YEAGER
-            </h1>
+        </div>
+
+
+        <!-- PROFILE CARD -->
+
+        <div class="premium-card profile-main">
+
+            <div class="profile-top">
+
+                <div class="avatar">
+                    P
+                </div>
+
+                <div class="user-details">
+
+                    <div class="label">
+                        USERNAME
+                    </div>
+
+                    <div class="username glow">
+                        Pavilon
+                    </div>
+
+                    <div class="email">
+                        pavitheju216@gmail.com
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <div class="balance-label">
+                WALLET BALANCE
+            </div>
+
+            <div class="balance">
+                ₹<span id="profileBalance">0.00</span>
+            </div>
+
+        </div>
+
+
+        <!-- ACCOUNT STATISTICS -->
+
+        <h2 class="section-title glow">
+            Account Statistics
+        </h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    🎮
+                </div>
+
+                <div class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Matches
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    🏆
+                </div>
+
+                <div class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Wins
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    ₹
+                </div>
+
+                <div class="stat-number">
+                    ₹0.00
+                </div>
+
+                <div class="stat-label">
+                    Won
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ACCOUNT -->
+
+        <h2 class="section-title glow">
+            Account
+        </h2>
+
+        <div class="premium-card account-box">
+
+
+            <!-- MY WALLET -->
+
+            <button class="menu-item" onclick="openWallet()">
+
+                <div class="menu-icon">
+                    💳
+                </div>
+
+                <div class="menu-text">
+
+                    <div class="menu-title">
+                        My Wallet
+                    </div>
+
+                    <div class="menu-desc">
+                        View your wallet balance
+                    </div>
+
+                </div>
+
+                <div class="menu-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+            <!-- TRANSACTION HISTORY -->
+
+            <button class="menu-item" onclick="showTransactions()">
+
+                <div class="menu-icon">
+                    🧾
+                </div>
+
+                <div class="menu-text">
+
+                    <div class="menu-title">
+                        Transaction History
+                    </div>
+
+                    <div class="menu-desc">
+                        View your transactions
+                    </div>
+
+                </div>
+
+                <div class="menu-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+            <!-- MY MATCHES -->
+
+            <button class="menu-item" onclick="showMatches()">
+
+                <div class="menu-icon">
+                    🎮
+                </div>
+
+                <div class="menu-text">
+
+                    <div class="menu-title">
+                        My Matches
+                    </div>
+
+                    <div class="menu-desc">
+                        View joined matches
+                    </div>
+
+                </div>
+
+                <div class="menu-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+            <!-- CUSTOMER SUPPORT -->
+
+            <button class="menu-item" onclick="openSupport()">
+
+                <div class="menu-icon">
+                    🎧
+                </div>
+
+                <div class="menu-text">
+
+                    <div class="menu-title">
+                        Customer Support
+                    </div>
+
+                    <div class="menu-desc">
+                        Get help and support
+                    </div>
+
+                </div>
+
+                <div class="menu-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+            <!-- LOGOUT -->
+
+            <button class="menu-item" onclick="logout()">
+
+                <div class="menu-icon">
+                    ⏻
+                </div>
+
+                <div class="menu-text">
+
+                    <div class="menu-title">
+                        Logout
+                    </div>
+
+                    <div class="menu-desc">
+                        Sign out from your account
+                    </div>
+
+                </div>
+
+                <div class="menu-arrow">
+                    ›
+                </div>
+
+            </button>
 
         </div>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- ================= BOTTOM NAV ================= -->
+<!-- =====================================================
+     BOTTOM NAV
+===================================================== -->
 
-<div class="bottom-nav">
+<nav class="bottom-nav">
 
-    <div
-        class="nav-item active"
-        onclick="showPage('homePage',this)"
+    <button
+        id="navHome"
+        class="nav-btn active"
+        onclick="showPage('home')"
     >
 
         <div class="nav-icon">
-            ⌂
+            🏠
         </div>
 
-        Home
+        <div class="nav-label">
+            Home
+        </div>
 
-    </div>
+    </button>
 
 
-    <div
-        class="nav-item"
-        onclick="showPage('walletPage',this)"
+    <button
+        id="navWallet"
+        class="nav-btn"
+        onclick="showPage('wallet')"
     >
 
         <div class="nav-icon">
-            ▣
+            💳
         </div>
 
-        Wallet
+        <div class="nav-label">
+            Wallet
+        </div>
 
-    </div>
+    </button>
 
 
-    <div
-        class="nav-item"
-        onclick="showPage('profilePage',this)"
+    <button
+        id="navProfile"
+        class="nav-btn"
+        onclick="showPage('profile')"
     >
 
         <div class="nav-icon">
             👤
         </div>
 
-        Profile
+        <div class="nav-label">
+            Profile
+        </div>
 
-    </div>
+    </button>
 
-</div>
+</nav>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- TOAST -->
+
+<div id="toast" class="toast"></div>
+
 
 <script>
 
-function showPage(pageId, element){
+/* =========================
+   PAGE NAVIGATION
+========================= */
 
-    document.querySelectorAll('.page').forEach(function(page){
+function showPage(page){
 
-        page.classList.remove('active');
-
-    });
-
-
-    document.getElementById(pageId)
-        .classList.add('active');
-
-
-    document.querySelectorAll('.nav-item').forEach(function(item){
-
-        item.classList.remove('active');
-
-    });
+    document
+        .querySelectorAll('.page')
+        .forEach(function(item){
+            item.classList.remove('active');
+        });
 
 
-    element.classList.add('active');
+    document
+        .querySelectorAll('.nav-btn')
+        .forEach(function(item){
+            item.classList.remove('active');
+        });
 
-    window.scrollTo(0,0);
+
+    if(page === 'home'){
+
+        document
+            .getElementById('homePage')
+            .classList.add('active');
+
+        document
+            .getElementById('navHome')
+            .classList.add('active');
+
+        window.scrollTo(0,0);
+
+    }
+
+
+    if(page === 'wallet'){
+
+        document
+            .getElementById('walletPage')
+            .classList.add('active');
+
+        document
+            .getElementById('navWallet')
+            .classList.add('active');
+
+        window.scrollTo(0,0);
+
+    }
+
+
+    if(page === 'profile'){
+
+        document
+            .getElementById('profilePage')
+            .classList.add('active');
+
+        document
+            .getElementById('navProfile')
+            .classList.add('active');
+
+        window.scrollTo(0,0);
+
+    }
 
 }
 
 
-function openGame(gameName){
+/* =========================
+   HOME
+========================= */
 
-    alert(gameName + " selected!");
+function goHome(){
+    showPage('home');
+}
+
+
+/* =========================
+   WALLET
+========================= */
+
+function openWallet(){
+    showPage('wallet');
+}
+
+function showTransactions(){
+    showPage('wallet');
+
+    setTimeout(function(){
+
+        showToast('Transaction History');
+
+    },300);
+}
+
+
+/* =========================
+   MATCHES
+========================= */
+
+function showMatches(){
+
+    showToast('My Matches');
 
 }
+
+
+/* =========================
+   SUPPORT
+========================= */
+
+function openSupport(){
+
+    showToast('Customer Support');
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+    let confirmLogout =
+        confirm('Are you sure you want to logout?');
+
+    if(confirmLogout){
+
+        showToast('Logged out');
+
+        /*
+         * If your PHP login system already has
+         * logout.php, change this to:
+         *
+         * window.location.href = 'logout.php';
+         */
+
+    }
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById('toast');
+
+    toast.textContent = message;
+
+    toast.classList.add('show');
+
+    setTimeout(function(){
+
+        toast.classList.remove('show');
+
+    },1800);
+
+}
+
+
+/* =========================
+   BALANCE
+========================= */
+
+function updateBalance(){
+
+    const balance = '0.00';
+
+    document
+        .getElementById('homeBalance')
+        .textContent = balance;
+
+    document
+        .getElementById('walletBalance')
+        .textContent = balance;
+
+    document
+        .getElementById('profileBalance')
+        .textContent = balance;
+
+}
+
+updateBalance();
 
 </script>
-
 
 </body>
 </html>
