@@ -907,21 +907,57 @@ body{
 </main>
 <nav class="bottom-nav">
 
-    <button onclick="showHome()">
-        <span>⌂</span>
+    <button class="nav-item" data-page="home" onclick="goHome()">
+        <span class="nav-icon">⌂</span>
     </button>
 
-    <button onclick="window.location.href='wallet.html'">
-        <span>▣</span>
+    <button class="nav-item" data-page="wallet" onclick="goWallet()">
+        <span class="nav-icon">▣</span>
     </button>
 
-    <button onclick="window.location.href='profile.html'">
-        <span>♟</span>
+    <button class="nav-item" data-page="profile" onclick="goProfile()">
+        <span class="nav-icon">♟</span>
     </button>
 
 </nav>
     
-</script>
+<script>
+    
+    function goHome() {
+    window.location.href = "index.html";
+}
+
+function goWallet() {
+    window.location.href = "wallet.html";
+}
+
+function goProfile() {
+    window.location.href = "profile.html";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const path = window.location.pathname.toLowerCase();
+
+    let currentPage = "home";
+
+    if (path.includes("wallet")) {
+        currentPage = "wallet";
+    } else if (path.includes("profile")) {
+        currentPage = "profile";
+    }
+
+    document.querySelectorAll(".nav-item").forEach(function (item) {
+
+        if (item.dataset.page === currentPage) {
+            item.classList.add("active");
+        }
+
+    });
+
+});
+    
+<script>
 
 </body>
 </html>
