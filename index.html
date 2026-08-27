@@ -3,716 +3,975 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PAVI GAME 🎮</title>
+
+<title>⚡ PAVI GAME 🎯</title>
 
 <style>
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#080014;
+    background:#030303;
     color:#fff;
-    font-family:Arial,sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     min-height:100vh;
     padding-bottom:90px;
+    overflow-x:hidden;
 }
 
+/* =========================
+   MAIN BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,255,255,.055),
+            transparent 35%
+        );
+    z-index:-1;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 .header{
-    min-height:120px;
-    padding:18px;
-    background:#0b0015;
-    border-bottom:1px solid #291036;
+    height:130px;
+    padding:15px 18px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #090909,
+            #020202
+        );
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 8px 30px rgba(255,255,255,.025);
 }
 
+/* Profile circle */
+
 .logo{
-    width:52px;
-    height:52px;
+    width:58px;
+    height:58px;
+
     border-radius:50%;
-    background:linear-gradient(135deg,#b000ff,#5200ff);
+
+    background:#080808;
+
+    border:2px solid rgba(255,255,255,.7);
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:27px;
-    box-shadow:0 0 18px #8700ff;
+
+    font-size:28px;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.35),
+        inset 0 0 18px rgba(255,255,255,.08);
+
+    overflow:hidden;
 }
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Welcome */
 
 .welcome{
     text-align:center;
+    flex:1;
+    margin:0 10px;
 }
 
 .welcome small{
+    display:block;
     color:#aaa;
-    font-size:13px;
+    font-size:12px;
+    margin-bottom:5px;
+    letter-spacing:.5px;
 }
 
 .welcome h1{
     font-size:22px;
-    margin-top:5px;
+    font-weight:800;
+    letter-spacing:.5px;
+
+    text-shadow:
+        0 1px 0 #777,
+        0 0 8px rgba(255,255,255,.45),
+        0 0 20px rgba(255,255,255,.15);
 }
 
+/* Wallet */
+
 .wallet{
-    background:linear-gradient(135deg,#6200ff,#a000ff);
-    padding:12px 15px;
+    min-width:88px;
+
+    padding:13px 15px;
+
     border-radius:18px;
-    font-size:17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #050505
+        );
+
+    border:1px solid rgba(255,255,255,.45);
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.18),
+        inset 0 1px 0 rgba(255,255,255,.15),
+        inset 0 -8px 18px rgba(0,0,0,.7);
+
+    text-align:center;
+
+    font-size:18px;
     font-weight:bold;
 }
 
-.banner{
-    margin:18px;
-    height:150px;
-    border-radius:18px;
-    background:linear-gradient(135deg,#210033,#7600d9,#180025);
-    border:1px solid #8d00ff;
+.coin{
+    color:#fff;
+    filter:
+        drop-shadow(0 0 3px white);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    margin:22px 18px 0;
+
+    min-height:155px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #141414,
+            #050505 55%,
+            #111
+        );
+
+    border:1px solid rgba(255,255,255,.38);
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
-    box-shadow:0 0 20px #520080;
+
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.18),
+        0 12px 35px rgba(0,0,0,.9),
+        inset 0 1px 0 rgba(255,255,255,.25),
+        inset 0 -25px 45px rgba(0,0,0,.8);
 }
 
-.banner h2{
+.hero::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    filter:blur(50px);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-title{
     font-size:29px;
-    text-shadow:0 0 12px #d000ff;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    color:#fff;
+
+    text-shadow:
+        0 2px 0 #777,
+        0 0 5px #fff,
+        0 0 18px rgba(255,255,255,.55);
 }
 
-.banner p{
-    color:#ccc;
-    margin-top:8px;
+.hero-subtitle{
+    margin-top:9px;
+
+    color:#bdbdbd;
+
+    font-size:14px;
+
+    letter-spacing:.8px;
 }
 
-.title{
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
     text-align:center;
-    margin:28px 0 18px;
-    font-size:24px;
+
+    margin:31px 0 18px;
+
+    font-size:23px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
+
+    color:#fff;
+
+    text-shadow:
+        0 1px 0 #666,
+        0 0 10px rgba(255,255,255,.4);
 }
+
+/* =========================
+   MATCH CARDS
+========================= */
 
 .matches{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:10px;
-    padding:0 15px;
+
+    padding:0 17px;
 }
 
 .match{
     height:145px;
-    background:linear-gradient(145deg,#220038,#13001f);
-    border:1px solid #3b005d;
-    border-radius:12px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #050505
+        );
+
+    border:1px solid rgba(255,255,255,.24);
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.9),
+        0 0 7px rgba(255,255,255,.12),
+        inset 0 1px 0 rgba(255,255,255,.14);
+
+    transition:.25s;
+}
+
+.match:active{
+    transform:scale(.96);
 }
 
 .match-icon{
     width:58px;
     height:58px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#2300d0,#0075ff);
+
+    border-radius:16px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #292929,
+            #050505
+        );
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:
+        0 0 12px rgba(255,255,255,.2),
+        inset 0 2px 5px rgba(255,255,255,.12),
+        inset 0 -8px 15px rgba(0,0,0,.9);
+
     margin-bottom:12px;
+
+    font-size:30px;
 }
 
 .match span{
-    font-size:16px;
+    font-size:14px;
+    color:#ddd;
+    font-weight:600;
 }
 
+/* =========================
+   GAME TABS
+========================= */
+
 .tabs{
+    margin:0 17px 24px;
+
     display:flex;
-    margin:0 15px 25px;
-    border-radius:9px;
+
+    border-radius:11px;
+
     overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.8);
 }
 
 .tab{
-    flex:1;
-    padding:15px 3px;
+    width:50%;
+
+    padding:16px 5px;
+
     text-align:center;
-    background:#292332;
-    color:#aaa;
+
+    background:#111;
+
+    color:#777;
+
     font-size:14px;
-    font-weight:bold;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
 }
 
 .tab.active{
-    background:linear-gradient(90deg,#5800ff,#9200ff);
     color:#fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #292929,
+            #080808
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.25),
+        0 0 10px rgba(255,255,255,.18);
+
+    text-shadow:
+        0 0 7px white;
 }
+
+/* =========================
+   GAME GRID
+========================= */
 
 .games{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px 12px;
-    padding:0 15px;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:22px 14px;
+
+    padding:0 17px;
 }
 
 .game{
     text-align:center;
+
     cursor:pointer;
+
+    transition:.25s;
 }
+
+.game:active{
+    transform:scale(.95);
+}
+
+/* IMAGE */
 
 .game-img{
-    height:100px;
-    border-radius:13px;
-    background:radial-gradient(circle,#b500ff,#4a0095 50%,#110018);
-    border:1px solid #8500ff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 0 12px #570080;
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#050505;
+
+    border:1px solid rgba(255,255,255,.42);
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.2),
+        0 10px 25px rgba(0,0,0,.9),
+        inset 0 1px 0 rgba(255,255,255,.2);
 }
 
-.game-img::before{
-    content:"⚡";
-    font-size:48px;
+.game-img img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    /* IMPORTANT:
+       Original image colour preserved */
+    filter:none;
+
+    transform:scale(1.01);
+
+    transition:.3s;
 }
+
+.game:hover img{
+    transform:scale(1.05);
+}
+
+/* small shining border */
+
+.game-img::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:17px;
+
+    box-shadow:
+        inset 0 0 12px rgba(255,255,255,.16);
+
+    pointer-events:none;
+}
+
+/* GAME TITLE */
 
 .game-name{
     margin-top:9px;
+
     font-size:14px;
-    font-weight:bold;
+
+    font-weight:900;
+
+    color:#fff;
+
+    letter-spacing:.3px;
+
+    text-shadow:
+        0 1px 0 #666,
+        0 0 8px rgba(255,255,255,.45);
 }
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
 
 .bottom-nav{
     position:fixed;
+
     left:0;
     right:0;
     bottom:0;
+
     height:82px;
-    background:#111525;
-    border-top:1px solid #292e43;
+
+    background:
+        linear-gradient(
+            180deg,
+            #101010,
+            #030303
+        );
+
+    border-top:1px solid rgba(255,255,255,.2);
+
     display:flex;
+
     justify-content:space-around;
+
     align-items:center;
+
     z-index:100;
+
+    box-shadow:
+        0 -8px 30px rgba(0,0,0,.9);
 }
 
 .nav-item{
-    color:#999;
+    width:33.33%;
+
     text-align:center;
-    font-size:13px;
+
+    color:#777;
+
+    font-size:12px;
+
     cursor:pointer;
+
+    transition:.2s;
 }
 
 .nav-icon{
-    display:block;
-    font-size:25px;
+    font-size:24px;
+
     margin-bottom:5px;
+
+    filter:
+        drop-shadow(0 0 3px rgba(255,255,255,.2));
 }
 
 .nav-item.active{
-    color:#b45cff;
+    color:#fff;
+
+    text-shadow:
+        0 0 8px white;
 }
+
+/* =========================
+   OTHER PAGES
+========================= */
 
 .page{
     display:none;
+
+    min-height:calc(100vh - 130px);
+
+    padding:20px 18px 110px;
+
+    background:#030303;
 }
 
 .page.active{
     display:block;
 }
 
-.back{
-    padding:22px 18px;
-    font-size:20px;
-    cursor:pointer;
-}
+.page-title{
+    font-size:26px;
 
-.tournament-card{
-    margin:0 15px 25px;
-    background:linear-gradient(145deg,#23003c,#11001c);
-    border:1px solid #4b0070;
-    border-radius:15px;
-    overflow:hidden;
-}
+    font-weight:900;
 
-.tournament-image{
-    height:170px;
-    background:linear-gradient(135deg,#ff6900,#ffae00,#5c2100);
-    display:flex;
-    align-items:center;
-    justify-content:center;
     text-align:center;
+
+    margin:20px 0 28px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.45);
 }
 
-.tournament-image h2{
-    font-size:27px;
+.info-card{
+    background:
+        linear-gradient(
+            145deg,
+            #161616,
+            #050505
+        );
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:16px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.9),
+        0 0 10px rgba(255,255,255,.12),
+        inset 0 1px 0 rgba(255,255,255,.16);
 }
 
-.rules{
-    background:#ff721d;
-    text-align:center;
-    padding:9px;
-    font-weight:bold;
-    font-size:13px;
-}
-
-.tournament-body{
-    padding:18px;
-}
-
-.tournament-body h3{
+.info-card h3{
     font-size:18px;
-    line-height:1.4;
+    margin-bottom:10px;
 }
 
-.info{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    margin:22px 0;
-    text-align:center;
+.info-card p{
+    color:#aaa;
+    line-height:1.6;
 }
 
-.info div{
-    border-right:1px solid #422951;
-    padding:3px;
-}
-
-.info div:last-child{
-    border:none;
-}
-
-.info small{
-    color:#ff7a24;
-    font-size:11px;
-}
-
-.info strong{
-    display:block;
-    margin-top:7px;
-    font-size:14px;
-}
-
-.progress{
-    height:7px;
-    background:#300044;
-    border-radius:10px;
-    overflow:hidden;
-    margin-bottom:7px;
-}
-
-.progress span{
-    display:block;
-    width:48%;
-    height:100%;
-    background:#7900ff;
-}
-
-.join{
-    width:100%;
-    border:0;
-    padding:14px;
-    border-radius:8px;
-    background:linear-gradient(90deg,#5900ff,#9400ff);
-    color:#fff;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:380px){
 
     .header{
-        padding:15px 10px;
+        padding:12px;
     }
 
     .logo{
-        width:45px;
-        height:45px;
-        font-size:23px;
-    }
-
-    .wallet{
-        padding:10px 11px;
-        font-size:15px;
+        width:50px;
+        height:50px;
     }
 
     .welcome h1{
         font-size:19px;
     }
+
+    .wallet{
+        min-width:78px;
+        padding:11px 10px;
+        font-size:16px;
+    }
+
+    .games{
+        gap:18px 10px;
+        padding:0 13px;
+    }
+
+    .game-name{
+        font-size:12px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HOME PAGE -->
+<!-- =========================
+     HOME PAGE
+========================= -->
 
-<section id="home" class="page active">
+<div id="homePage" class="page active">
 
-<header class="header">
+    <header class="header">
 
-    <div class="logo">🎮</div>
+        <div class="logo">
+            <img src="eren.jpg" alt="PAVI GAME">
+        </div>
 
-    <div class="welcome">
-        <small>Welcome Back,</small>
-        <h1>PAVI GAME</h1>
-    </div>
+        <div class="welcome">
 
-    <div class="wallet">
-        🪙 0.00
-    </div>
+            <small>Welcome Back</small>
 
-</header>
+            <h1>EREN YEAGER</h1>
 
+        </div>
 
-<div class="banner">
+        <div class="wallet">
 
-    <div>
-        <h2>⚡ PAVI GAME ⚡</h2>
-        <p>Play • Compete • Win</p>
-    </div>
+            <span class="coin">🪙</span>
+            0.00
 
-</div>
+        </div>
 
-
-<h2 class="title">My Matches</h2>
+    </header>
 
 
-<div class="matches">
+    <!-- HERO -->
 
-    <div class="match">
-        <div class="match-icon">⟳</div>
-        <span>Ongoing</span>
-    </div>
+    <section class="hero">
 
-    <div class="match">
-        <div class="match-icon">▣</div>
-        <span>Upcoming</span>
-    </div>
+        <div class="hero-content">
 
-    <div class="match">
-        <div class="match-icon">✓</div>
-        <span>Completed</span>
-    </div>
+            <div class="hero-title">
+                ⚡ PAVI GAME 🎯
+            </div>
 
-</div>
+            <div class="hero-subtitle">
+                Play • Compete • Win
+            </div>
 
+        </div>
 
-<h2 class="title">Esports Games</h2>
+    </section>
 
 
-<div class="tabs">
+    <!-- MATCHES -->
 
-    <div class="tab active">
-        TOURNAMENT
-    </div>
+    <h2 class="section-title">
+        My Matches
+    </h2>
 
-    <div class="tab">
-        SOLO
-    </div>
+    <div class="matches">
 
-</div>
+        <div class="match">
 
+            <div class="match-icon">
+                ↻
+            </div>
 
-<div class="games">
+            <span>Ongoing</span>
 
-    <div class="game" onclick="openTournament('FULL MAP')">
-        <div class="game-img"></div>
-        <div class="game-name">FULL MAP</div>
-    </div>
-
-    <div class="game" onclick="openTournament('CS 1V1')">
-        <div class="game-img"></div>
-        <div class="game-name">CS 1V1</div>
-    </div>
-
-    <div class="game" onclick="openTournament('LW 1V1')">
-        <div class="game-img"></div>
-        <div class="game-name">LW 1V1</div>
-    </div>
-
-    <div class="game" onclick="openTournament('LW LOSS')">
-        <div class="game-img"></div>
-        <div class="game-name">LW LOSS</div>
-    </div>
-
-    <div class="game" onclick="openTournament('CS 2V2')">
-        <div class="game-img"></div>
-        <div class="game-name">CS 2V2</div>
-    </div>
-
-    <div class="game" onclick="openTournament('LW HEAD')">
-        <div class="game-img"></div>
-        <div class="game-name">LW HEAD</div>
-    </div>
-
-    <div class="game" onclick="openTournament('CS HEAD')">
-        <div class="game-img"></div>
-        <div class="game-name">CS HEAD</div>
-    </div>
-
-    <div class="game" onclick="openTournament('MIX NIGHT')">
-        <div class="game-img"></div>
-        <div class="game-name">MIX NIGHT</div>
-    </div>
-
-    <div class="game" onclick="openTournament('FREE MATCH')">
-        <div class="game-img"></div>
-        <div class="game-name">FREE MATCH</div>
-    </div>
-
-</div>
-
-</section>
+        </div>
 
 
-<!-- TOURNAMENT PAGE -->
+        <div class="match">
 
-<section id="tournament" class="page">
+            <div class="match-icon">
+                ▣
+            </div>
 
-<div class="back" onclick="showPage('home')">
+            <span>Upcoming</span>
 
-    ← &nbsp;
-
-    <span id="gameName">
-        FULL MAP
-    </span>
-
-</div>
+        </div>
 
 
-<div class="tabs">
+        <div class="match">
 
-    <div class="tab">
-        ONGOING
-    </div>
+            <div class="match-icon">
+                ✓
+            </div>
 
-    <div class="tab active">
-        UPCOMING
-    </div>
+            <span>Completed</span>
 
-    <div class="tab">
-        RESULTS
-    </div>
-
-</div>
-
-
-<div class="tournament-card">
-
-    <div class="tournament-image">
-
-        <h2>
-            🔥 SOLO PER KILL
-            <br>
-            TOURNAMENT 🔥
-        </h2>
+        </div>
 
     </div>
 
 
-    <div class="rules">
-        SOLO • FAST WITHDRAWAL • 100% SAFE
+    <!-- ESPORTS -->
+
+    <h2 class="section-title">
+        Esports Games
+    </h2>
+
+
+    <div class="tabs">
+
+        <div class="tab active">
+            TOURNAMENT
+        </div>
+
+        <div class="tab">
+            SOLO
+        </div>
+
     </div>
 
 
-    <div class="tournament-body">
+    <!-- ONLY 4 OPTIONS -->
 
-        <h3>
+    <div class="games">
 
-            <span id="selectedGame">
+
+        <!-- FULL MAP -->
+
+        <div class="game"
+             onclick="openGame('FULL MAP')">
+
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="FULL MAP"
+                >
+
+            </div>
+
+            <div class="game-name">
                 FULL MAP
-            </span>
-
-            PER KILL SOLO ✅
-
-            <br>
-
-            Match #11535
-
-        </h3>
-
-
-        <div class="info">
-
-            <div>
-
-                <small>DATE</small>
-
-                <strong>
-                    27/08/2026
-                    <br>
-                    10:00 AM
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <small>PRIZE POOL</small>
-
-                <strong>
-                    🪙 444
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <small>PER KILL</small>
-
-                <strong>
-                    🪙 5
-                </strong>
-
             </div>
 
         </div>
 
 
-        <div class="progress">
+        <!-- CS 1V1 -->
 
-            <span></span>
+        <div class="game"
+             onclick="openGame('CS 1V1 ONETAP')">
+
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="CS 1V1 ONETAP"
+                >
+
+            </div>
+
+            <div class="game-name">
+                CS 1V1 ONETAP
+            </div>
 
         </div>
 
 
-        <p style="margin-bottom:14px;color:#aaa;">
+        <!-- CS 2V2 -->
 
-            23 / 48 Players
+        <div class="game"
+             onclick="openGame('CS 2V2 ONETAP')">
 
-        </p>
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="CS 2V2 ONETAP"
+                >
+
+            </div>
+
+            <div class="game-name">
+                CS 2V2 ONETAP
+            </div>
+
+        </div>
 
 
-        <button
-            class="join"
-            onclick="joinTournament()">
+        <!-- CS 4V4 -->
 
-            🪙 6 &nbsp; JOIN
+        <div class="game"
+             onclick="openGame('CS 4V4 ONETAP')">
 
-        </button>
+            <div class="game-img">
+
+                <img
+                    src="eren.jpg"
+                    alt="CS 4V4 ONETAP"
+                >
+
+            </div>
+
+            <div class="game-name">
+                CS 4V4 ONETAP
+            </div>
+
+        </div>
 
     </div>
 
 </div>
 
 
-<div class="tournament-card">
+<!-- =========================
+     WALLET PAGE
+========================= -->
 
-    <div
-        class="tournament-image"
-        style="background:linear-gradient(135deg,#5800ff,#b000ff,#19002f);">
+<div id="walletPage" class="page">
 
-        <h2>
-            ⚡ DUO FULL MAP
-            <br>
-            TOURNAMENT ⚡
-        </h2>
+    <h2 class="page-title">
+        WALLET
+    </h2>
 
-    </div>
-
-
-    <div class="rules">
-        DUO • FAST WITHDRAWAL • 100% SAFE
-    </div>
-
-
-    <div class="tournament-body">
+    <div class="info-card">
 
         <h3>
-
-            FULL MAP PER KILL DUO ✅
-
-            <br>
-
-            Match #11547
-
+            🪙 Balance
         </h3>
 
-
-        <div class="info">
-
-            <div>
-
-                <small>DATE</small>
-
-                <strong>
-                    27/08/2026
-                    <br>
-                    10:30 AM
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <small>PRIZE POOL</small>
-
-                <strong>
-                    🪙 444
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <small>PER KILL</small>
-
-                <strong>
-                    🪙 5
-                </strong>
-
-            </div>
-
-        </div>
-
-
-        <div class="progress">
-
-            <span style="width:35%;"></span>
-
-        </div>
-
-
-        <p style="margin-bottom:14px;color:#aaa;">
-
-            16 / 48 Players
-
+        <p>
+            ₹0.00
         </p>
 
+    </div>
 
-        <button
-            class="join"
-            onclick="joinTournament()">
+    <div class="info-card">
 
-            🪙 6 &nbsp; JOIN
+        <h3>
+            Add Money
+        </h3>
 
-        </button>
+        <p>
+            Wallet balance and transactions will appear here.
+        </p>
 
     </div>
 
 </div>
 
-</section>
+
+<!-- =========================
+     PROFILE PAGE
+========================= -->
+
+<div id="profilePage" class="page">
+
+    <h2 class="page-title">
+        PROFILE
+    </h2>
+
+    <div class="info-card">
+
+        <h3>
+            EREN YEAGER
+        </h3>
+
+        <p>
+            Welcome to PAVI GAME.
+        </p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>
+            Account
+        </h3>
+
+        <p>
+            Your profile details will appear here.
+        </p>
+
+    </div>
+
+</div>
 
 
-<!-- BOTTOM NAV -->
+<!-- =========================
+     BOTTOM NAV
+========================= -->
 
 <nav class="bottom-nav">
 
     <div
         class="nav-item active"
-        onclick="showPage('home')">
+        onclick="showPage('home')"
+        id="homeNav"
+    >
 
-        <span class="nav-icon">
+        <div class="nav-icon">
             ⌂
-        </span>
+        </div>
 
         Home
 
@@ -721,11 +980,13 @@ body{
 
     <div
         class="nav-item"
-        onclick="wallet()">
+        onclick="showPage('wallet')"
+        id="walletNav"
+    >
 
-        <span class="nav-icon">
+        <div class="nav-icon">
             ▣
-        </span>
+        </div>
 
         Wallet
 
@@ -734,11 +995,13 @@ body{
 
     <div
         class="nav-item"
-        onclick="profile()">
+        onclick="showPage('profile')"
+        id="profileNav"
+    >
 
-        <span class="nav-icon">
+        <div class="nav-icon">
             👤
-        </span>
+        </div>
 
         Profile
 
@@ -749,63 +1012,71 @@ body{
 
 <script>
 
+/* =========================
+   PAGE SWITCH
+========================= */
+
 function showPage(page){
 
-    document.querySelectorAll(".page").forEach(
-        function(item){
+    const pages = {
 
-            item.classList.remove("active");
+        home:
+            document.getElementById("homePage"),
 
-        }
-    );
+        wallet:
+            document.getElementById("walletPage"),
 
-    document.getElementById(page)
+        profile:
+            document.getElementById("profilePage")
+
+    };
+
+
+    Object.values(pages).forEach(function(p){
+
+        p.classList.remove("active");
+
+    });
+
+
+    document
+        .getElementById("homeNav")
+        .classList.remove("active");
+
+    document
+        .getElementById("walletNav")
+        .classList.remove("active");
+
+    document
+        .getElementById("profileNav")
+        .classList.remove("active");
+
+
+    pages[page].classList.add("active");
+
+
+    document
+        .getElementById(page + "Nav")
         .classList.add("active");
 
-    window.scrollTo(0,0);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
 
 
-function openTournament(game){
+/* =========================
+   GAME CLICK
+========================= */
 
-    document.getElementById("gameName")
-        .innerText = game;
-
-    document.getElementById("selectedGame")
-        .innerText = game;
-
-    showPage("tournament");
-}
-
-
-function joinTournament(){
+function openGame(gameName){
 
     alert(
-        "Tournament Join\n\n" +
-        "Entry Fee: 🪙 6\n" +
-        "Wallet Balance: 🪙 0.00\n\n" +
-        "Insufficient wallet balance."
-    );
-
-}
-
-
-function wallet(){
-
-    alert(
-        "Wallet\n\n" +
-        "Balance: 🪙 0.00"
-    );
-
-}
-
-
-function profile(){
-
-    alert(
-        "Profile\n\n" +
-        "Username: Pavilon\n" +
-        "Wallet: 🪙 0.00"
+        gameName +
+        "\n\nTournament page coming soon."
     );
 
 }
