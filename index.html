@@ -780,7 +780,7 @@ body {
     padding-bottom: 110px;
 }
     /* =====================================================
-   FINAL MOBILE FIT - INDEX
+   FINAL INDEX MOBILE - FULL SCREEN FIT
 ===================================================== */
 
 @media (max-width:600px){
@@ -788,105 +788,116 @@ body {
     html,
     body{
         overflow:hidden !important;
+        height:100% !important;
     }
 
-    /* MAIN PAGE */
-    #indexPage,
-    .index-page{
-        padding-bottom:75px !important;
+    body{
+        padding:0 !important;
+        margin:0 !important;
     }
 
 
-    /* ===== TOP HEADER ===== */
+    /* ================= HEADER ================= */
 
     .top-header,
     .home-header,
     .header{
-        min-height:105px !important;
-        height:105px !important;
-        padding-top:10px !important;
-        padding-bottom:10px !important;
+        height:82px !important;
+        min-height:82px !important;
+        padding:6px 12px !important;
+        margin-bottom:4px !important;
     }
 
 
-    /* ===== BANNER ===== */
+    /* ================= PAVI GAME ================= */
 
     .game-banner,
     .hero-banner,
     .pavi-game-banner{
-        height:135px !important;
-        min-height:135px !important;
-        margin-top:8px !important;
-        margin-bottom:8px !important;
+        height:105px !important;
+        min-height:105px !important;
+        margin:5px 0 5px !important;
     }
 
 
-    /* ===== SECTION TITLES ===== */
+    /* ================= TITLES ================= */
 
     .section-title,
     .games-title,
     .section-heading{
-        margin-top:12px !important;
-        margin-bottom:7px !important;
-        font-size:20px !important;
+        font-size:18px !important;
+        margin-top:7px !important;
+        margin-bottom:5px !important;
+        line-height:1.1 !important;
     }
 
 
-    /* ===== MY MATCHES ===== */
+    /* ================= MY MATCHES ================= */
 
     .matches-grid,
     .match-grid,
     .my-matches-grid{
-        gap:7px !important;
+        gap:6px !important;
     }
 
     .match-card{
-        height:105px !important;
-        min-height:105px !important;
-        padding:8px !important;
-        border-radius:15px !important;
+        height:82px !important;
+        min-height:82px !important;
+        padding:5px !important;
+        border-radius:13px !important;
     }
 
     .match-card .icon,
     .match-icon{
-        width:48px !important;
-        height:48px !important;
-        font-size:22px !important;
+        width:38px !important;
+        height:38px !important;
+        font-size:19px !important;
     }
 
 
-    /* ===== ESPORTS TABS ===== */
+    /* ================= ESPORTS TITLE ================= */
+
+    .esports-title{
+        margin-top:7px !important;
+        margin-bottom:5px !important;
+    }
+
+
+    /* ================= TOURNAMENT / SOLO ================= */
 
     .game-tabs,
     .esports-tabs,
     .category-tabs{
-        height:42px !important;
-        min-height:42px !important;
-        margin-bottom:7px !important;
+        height:38px !important;
+        min-height:38px !important;
+        margin-bottom:5px !important;
+        border-radius:12px !important;
     }
 
 
-    /* ===== 4 GAME CARDS ===== */
+    /* ================= 4 GAME CARDS ================= */
 
     .games-grid,
     .game-grid,
     .esports-grid,
     .games-container{
-        grid-template-columns:repeat(2,1fr) !important;
-        gap:7px !important;
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:6px !important;
+        width:100% !important;
     }
 
 
     .game-card,
     .esports-card{
-        height:125px !important;
-        min-height:125px !important;
-        border-radius:14px !important;
+        height:108px !important;
+        min-height:108px !important;
+        border-radius:13px !important;
         overflow:hidden !important;
     }
 
 
-    /* GAME IMAGE */
+    /* ================= IMAGE ================= */
 
     .game-card img,
     .esports-card img{
@@ -896,37 +907,39 @@ body {
     }
 
 
-    /* GAME NAME */
+    /* ================= GAME NAME ================= */
 
     .game-card-title,
     .esports-card-title{
         font-size:12px !important;
         font-weight:800 !important;
-        line-height:1.1 !important;
+        line-height:1.05 !important;
+        text-shadow:
+            0 1px 4px rgba(0,0,0,.95) !important;
     }
 
 
-    /* JOIN BUTTON */
+    /* ================= JOIN ================= */
 
     .game-card button,
     .esports-card button{
-        height:27px !important;
-        min-height:27px !important;
-        padding:0 8px !important;
+        height:25px !important;
+        min-height:25px !important;
+        padding:0 7px !important;
         font-size:9px !important;
-        border-radius:9px !important;
+        border-radius:8px !important;
     }
 
 
-    /* ===== EXISTING BOTTOM NAV ===== */
+    /* ================= EXISTING BOTTOM NAV ================= */
 
     .bottom-nav{
         position:fixed !important;
         left:14px !important;
         right:14px !important;
-        bottom:10px !important;
+        bottom:9px !important;
         height:62px !important;
-        z-index:99999 !important;
+        z-index:999999 !important;
     }
 
 }
