@@ -779,101 +779,98 @@ body{
 body {
     padding-bottom: 110px;
 }
-    /* ===== INDEX MOBILE COMPACT FIX ===== */
+    /* =====================================================
+   INDEX - NO SCROLL / FULL SCREEN MOBILE
+===================================================== */
 
 @media (max-width:600px){
 
-    /* 4 GAME CARDS - 2 x 2 */
+    html,
+    body{
+        width:100% !important;
+        height:100% !important;
+        overflow:hidden !important;
+    }
+
+    body{
+        padding-bottom:0 !important;
+    }
+
+
+    /* MAIN PAGE */
+    #indexPage,
+    .index-page,
+    main{
+        min-height:0 !important;
+        height:calc(100vh - 80px) !important;
+        overflow:hidden !important;
+    }
+
+
+    /* ===== 4 CARDS ===== */
+
     .games-grid,
     .game-grid,
     .esports-grid,
     .games-container{
         grid-template-columns:repeat(2,1fr) !important;
-        gap:10px !important;
+        gap:7px !important;
     }
 
-    /* GAME CARD */
+
+    /* ===== SMALLER CARD ===== */
+
     .game-card,
     .esports-card{
-        height:205px !important;
-        min-height:205px !important;
-        border-radius:17px !important;
+        height:150px !important;
+        min-height:150px !important;
+        border-radius:15px !important;
         overflow:hidden !important;
     }
 
-    /* CARD IMAGE */
+
+    /* IMAGE */
     .game-card img,
     .esports-card img{
+        width:100% !important;
         height:100% !important;
         object-fit:cover !important;
     }
 
-    /* CARD CONTENT */
-    .game-card-content,
-    .esports-card-content{
-        padding:8px !important;
+
+    /* ===== GAME NAME ===== */
+
+    .game-card-title,
+    .esports-card-title{
+        font-size:13px !important;
+        font-weight:800 !important;
+        color:#fff !important;
+
+        text-shadow:
+            0 1px 4px #000 !important;
     }
 
-    /* ===== GAME CARD TITLE ===== */
 
-.game-card-title,
-.esports-card-title{
-    font-size:14px !important;
-    font-weight:800 !important;
-    color:#fff !important;
-    letter-spacing:.3px !important;
-    text-shadow:
-        0 1px 4px rgba(0,0,0,.9),
-        0 0 6px rgba(255,255,255,.25) !important;
+    /* ===== JOIN BUTTON ===== */
 
-    position:absolute !important;
-    left:10px !important;
-    right:10px !important;
-    bottom:48px !important;
-
-    z-index:5 !important;
-
-    white-space:nowrap !important;
-    overflow:hidden !important;
-    text-overflow:ellipsis !important;
-}
-
-    /* JOIN BUTTON */
     .game-card button,
-    .esports-card button,
-    .join-btn{
-        height:34px !important;
-        min-height:34px !important;
-        border-radius:10px !important;
+    .esports-card button{
+        height:30px !important;
+        min-height:30px !important;
         font-size:10px !important;
+        border-radius:10px !important;
     }
 
-    /* MATCH STATUS CARDS */
-    .match-status > *,
-    .match-stats > *{
-        min-height:95px !important;
-        height:95px !important;
-        padding:8px 5px !important;
-    }
 
-    /* LESS GLOW */
-    .game-card,
-    .esports-card,
-    .match-status > *,
-    .match-stats > *{
-        box-shadow:
-            0 0 5px rgba(255,255,255,.12) !important;
-    }
-}
+    /* ===== EXISTING BOTTOM NAV ===== */
 
-
-/* SMALL PHONE */
-@media(max-width:380px){
-
-    .game-card,
-    .esports-card{
-        height:205px !important;
-        min-height:205px !important;
+    .bottom-nav{
+        position:fixed !important;
+        left:14px !important;
+        right:14px !important;
+        bottom:12px !important;
+        height:64px !important;
+        z-index:99999 !important;
     }
 
 }
