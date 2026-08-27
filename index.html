@@ -828,11 +828,17 @@ body{
 <section id="walletPage" style="display:none;">
 
 <style>
+
+/* ================= PREMIUM WALLET ================= */
+
 #walletPage{
     min-height:calc(100vh - 82px);
-    padding:25px 16px 105px;
+    padding:25px 16px 110px;
     background:
-        radial-gradient(circle at 50% 0%,#181818 0%,#050505 38%,#000 80%);
+        radial-gradient(circle at 50% 0%,
+        rgba(255,255,255,.08),
+        transparent 35%),
+        #000;
     color:#fff;
 }
 
@@ -841,457 +847,603 @@ body{
     margin:auto;
 }
 
-.wallet-heading{
-    text-align:center;
-    margin-bottom:22px;
-}
+/* ================= HEADER ================= */
 
-.wallet-heading small{
-    color:#777;
-    font-size:11px;
-    letter-spacing:2px;
-}
-
-.wallet-heading h1{
-    margin-top:7px;
-    font-size:28px;
-    text-shadow:
-        0 0 6px #fff,
-        0 0 18px rgba(255,255,255,.55);
-}
-
-
-/* BALANCE */
-
-.wallet-balance{
-    position:relative;
-    overflow:hidden;
-
-    padding:25px 20px;
-
-    border:1px solid rgba(255,255,255,.75);
-    border-radius:25px;
-
-    background:
-        linear-gradient(145deg,#151515,#030303);
-
-    box-shadow:
-        0 0 7px rgba(255,255,255,.8),
-        0 0 25px rgba(255,255,255,.16),
-        inset 0 0 20px rgba(255,255,255,.04);
-}
-
-.wallet-balance:before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:15%;
-    width:70%;
-    height:1px;
-    background:#fff;
-    box-shadow:
-        0 0 8px #fff,
-        0 0 20px #fff;
-}
-
-.wallet-label{
-    color:#777;
-    font-size:11px;
-    letter-spacing:2px;
-}
-
-.wallet-total{
-    margin:8px 0 24px;
-
-    font-size:42px;
-    font-weight:700;
-
-    text-shadow:
-        0 0 6px #fff,
-        0 0 17px rgba(255,255,255,.6);
-}
-
-.wallet-money{
+.wallet-top{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-
-    padding:14px 0;
-
-    border-top:1px solid #292929;
-
-    font-size:13px;
+    gap:15px;
+    margin-bottom:32px;
 }
 
-.wallet-money span{
-    color:#999;
-}
-
-.wallet-money strong{
-    color:#fff;
-}
-
-
-/* BUTTONS */
-
-.wallet-buttons{
-    display:flex;
-    gap:12px;
-    margin-top:20px;
-}
-
-.wallet-action{
-    flex:1;
+.wallet-back{
+    width:48px;
     height:48px;
 
-    border-radius:14px;
-    border:1px solid #aaa;
-
-    background:#050505;
-    color:#fff;
-
-    font-family:inherit;
-    font-weight:700;
-    font-size:12px;
-
-    box-shadow:
-        0 0 7px rgba(255,255,255,.45);
-
-    transition:.2s;
-}
-
-.wallet-action:active{
-    transform:scale(.96);
-    box-shadow:
-        0 0 18px #fff;
-}
-
-
-/* STATISTICS */
-
-.wallet-section-title{
-    margin:30px 0 15px;
-
-    font-size:20px;
-    font-weight:700;
-
-    text-shadow:
-        0 0 5px #fff,
-        0 0 13px rgba(255,255,255,.5);
-}
-
-.wallet-section-title:after{
-    content:"";
-
-    display:block;
-
-    width:55px;
-    height:2px;
-
-    margin-top:8px;
-
-    background:#fff;
-
-    box-shadow:
-        0 0 7px #fff,
-        0 0 15px #fff;
-}
-
-.wallet-stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.wallet-stat{
-    min-height:120px;
-
-    padding:18px 8px;
-
-    text-align:center;
-
-    border:1px solid #555;
-    border-radius:19px;
-
-    background:
-        linear-gradient(145deg,#111,#030303);
-
-    box-shadow:
-        0 0 7px rgba(255,255,255,.3),
-        inset 0 0 15px rgba(255,255,255,.025);
-}
-
-.wallet-stat-icon{
-    font-size:25px;
-    margin-bottom:9px;
-
-    filter:drop-shadow(0 0 6px #fff);
-}
-
-.wallet-stat small{
-    display:block;
-    color:#777;
-    font-size:9px;
-    letter-spacing:1px;
-}
-
-.wallet-stat strong{
-    display:block;
-    margin-top:7px;
-    font-size:18px;
-}
-
-
-/* HISTORY */
-
-.wallet-history{
-    overflow:hidden;
-
-    border:1px solid #555;
-    border-radius:21px;
-
-    background:#070707;
-
-    box-shadow:
-        0 0 8px rgba(255,255,255,.28);
-}
-
-.wallet-history-item{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:17px;
-
-    border-bottom:1px solid #242424;
-}
-
-.wallet-history-left{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.wallet-history-icon{
-    width:43px;
-    height:43px;
+    border-radius:15px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    border:1px solid #555;
-    border-radius:13px;
+    background:#050505;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    color:#fff;
+
+    font-size:28px;
 
     box-shadow:
-        0 0 7px rgba(255,255,255,.35);
+        0 0 6px rgba(255,255,255,.8),
+        0 0 18px rgba(255,255,255,.22);
+
+    cursor:pointer;
 }
 
-.wallet-history-title{
-    font-size:13px;
+.wallet-heading{
+    font-size:27px;
+    font-weight:700;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 14px rgba(255,255,255,.65);
+}
+
+/* ================= TOTAL BALANCE ================= */
+
+.balance-card{
+
+    position:relative;
+
+    padding:28px 22px 23px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.015)
+        );
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,.55),
+        0 0 20px rgba(255,255,255,.18),
+        inset 0 0 25px rgba(255,255,255,.025);
+
+    overflow:hidden;
+}
+
+.balance-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-80px;
+    right:-70px;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    filter:blur(25px);
+}
+
+.balance-label{
+
+    color:#999;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+}
+
+.total-balance{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    margin-bottom:30px;
+}
+
+.balance-coin{
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f5c400;
+
+    color:#111;
+
+    font-size:22px;
+    font-weight:800;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.4);
+}
+
+.total-number{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 14px rgba(255,255,255,.55);
+}
+
+/* ================= MONEY ROWS ================= */
+
+.money-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:13px;
+
+    margin-bottom:24px;
+}
+
+.money-row{
+
+    min-height:58px;
+
+    padding:12px 14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.money-name{
+
+    color:#aaa;
+
+    font-size:14px;
+
+    font-weight:600;
+}
+
+.money-value{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:16px;
+
     font-weight:700;
 }
 
-.wallet-history-date{
-    margin-top:4px;
-    color:#666;
-    font-size:10px;
+.small-coin{
+
+    width:27px;
+    height:27px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f5c400;
+
+    color:#111;
+
+    font-size:12px;
+
+    font-weight:800;
 }
 
-.wallet-history-amount{
-    font-size:13px;
+/* ================= BUTTONS ================= */
+
+.wallet-actions{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.wallet-btn{
+
+    height:52px;
+
+    border-radius:15px;
+
+    border:1px solid #fff;
+
+    background:#050505;
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,.5),
+        0 0 16px rgba(255,255,255,.12);
+
+    transition:.2s;
+}
+
+.wallet-btn:active{
+
+    transform:scale(.96);
+
+    background:#fff;
+
+    color:#000;
+
+    box-shadow:
+        0 0 12px #fff,
+        0 0 30px rgba(255,255,255,.5);
+}
+
+/* ================= STATS ================= */
+
+.wallet-stats{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+
+    margin-top:28px;
+}
+
+.stat-card{
+
+    padding:20px 15px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,.35),
+        inset 0 0 18px rgba(255,255,255,.025);
+}
+
+.stat-title{
+
+    color:#888;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
+}
+
+.stat-value{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:21px;
+
     font-weight:700;
 }
 
-.wallet-empty{
-    padding:25px;
+/* ================= HISTORY ================= */
+
+.history-section{
+
+    margin-top:32px;
+}
+
+.history-title{
+
+    font-size:21px;
+
+    margin-bottom:15px;
+
     text-align:center;
-    color:#555;
-    font-size:11px;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 13px rgba(255,255,255,.55);
 }
 
+.history-card{
 
-/* MOBILE */
+    min-height:130px;
+
+    padding:22px;
+
+    border-radius:21px;
+
+    background:#050505;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,.3),
+        0 0 18px rgba(255,255,255,.08);
+}
+
+.history-empty{
+
+    color:#777;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:500px){
 
     #walletPage{
-        padding:23px 15px 100px;
+        padding:22px 15px 105px;
     }
 
-    .wallet-total{
-        font-size:36px;
+    .wallet-heading{
+        font-size:24px;
     }
 
-    .wallet-stats{
-        gap:8px;
+    .wallet-back{
+        width:45px;
+        height:45px;
     }
 
-    .wallet-stat{
-        min-height:110px;
+    .balance-card{
+        padding:24px 17px 20px;
+        border-radius:23px;
     }
 
+    .total-number{
+        font-size:32px;
+    }
+
+    .balance-coin{
+        width:48px;
+        height:48px;
+    }
+
+    .money-row{
+        min-height:55px;
+    }
+
+    .wallet-btn{
+        height:50px;
+        font-size:14px;
+    }
+
+    .stat-card{
+        padding:18px 13px;
+    }
+
+    .stat-value{
+        font-size:19px;
+    }
 }
+
 </style>
 
 
 <div class="wallet-wrap">
 
-    <div class="wallet-heading">
+    <!-- WALLET HEADER -->
 
-        <small>MY ACCOUNT</small>
+    <div class="wallet-top">
 
-        <h1>MY WALLET</h1>
+        <button
+            class="wallet-back"
+            onclick="showHome()">
+            ‹
+        </button>
+
+        <div class="wallet-heading">
+            My Wallet
+        </div>
 
     </div>
 
 
-    <!-- BALANCE -->
+    <!-- TOTAL BALANCE -->
 
-    <div class="wallet-balance">
+    <div class="balance-card">
 
-        <div class="wallet-label">
+        <div class="balance-label">
             TOTAL BALANCE
         </div>
 
-        <div class="wallet-total">
-            🪙 ₹0.00
-        </div>
+        <div class="total-balance">
 
-
-        <div class="wallet-money">
-
-            <span>🪙 Win Money</span>
-
-            <strong>₹0.00</strong>
-
-        </div>
-
-
-        <div class="wallet-money">
-
-            <span>💰 Join Money</span>
-
-            <strong>₹0.00</strong>
-
-        </div>
-
-
-        <div class="wallet-buttons">
-
-            <button
-                class="wallet-action"
-                onclick="alert('Add Money')">
-
-                ＋ ADD MONEY
-
-            </button>
-
-
-            <button
-                class="wallet-action"
-                onclick="alert('Withdraw Money')">
-
-                WITHDRAW
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- STATISTICS -->
-
-    <h2 class="wallet-section-title">
-        Wallet Statistics
-    </h2>
-
-
-    <div class="wallet-stats">
-
-        <div class="wallet-stat">
-
-            <div class="wallet-stat-icon">
-                💰
+            <div class="balance-coin">
+                ₹
             </div>
 
-            <small>EARNINGS</small>
-
-            <strong>₹0.00</strong>
-
-        </div>
-
-
-        <div class="wallet-stat">
-
-            <div class="wallet-stat-icon">
-                🏆
-            </div>
-
-            <small>WINNINGS</small>
-
-            <strong>₹0.00</strong>
-
-        </div>
-
-
-        <div class="wallet-stat">
-
-            <div class="wallet-stat-icon">
-                💸
-            </div>
-
-            <small>PAYOUTS</small>
-
-            <strong>₹0.00</strong>
-
-        </div>
-
-    </div>
-
-
-    <!-- HISTORY -->
-
-    <h2 class="wallet-section-title">
-        Wallet History
-    </h2>
-
-
-    <div class="wallet-history">
-
-        <div class="wallet-history-item">
-
-            <div class="wallet-history-left">
-
-                <div class="wallet-history-icon">
-                    🪙
-                </div>
-
-                <div>
-
-                    <div class="wallet-history-title">
-                        Wallet Balance
-                    </div>
-
-                    <div class="wallet-history-date">
-                        No transactions yet
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="wallet-history-amount">
+            <div class="total-number">
                 ₹0.00
             </div>
 
         </div>
 
 
-        <div class="wallet-empty">
-            Your wallet transactions will appear here.
+        <!-- MONEY DETAILS -->
+
+        <div class="money-list">
+
+            <div class="money-row">
+
+                <div class="money-name">
+                    Win Money
+                </div>
+
+                <div class="money-value">
+
+                    <div class="small-coin">
+                        ₹
+                    </div>
+
+                    ₹0.00
+
+                </div>
+
+            </div>
+
+
+            <div class="money-row">
+
+                <div class="money-name">
+                    Join Money
+                </div>
+
+                <div class="money-value">
+
+                    <div class="small-coin">
+                        ₹
+                    </div>
+
+                    ₹0.00
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADD / WITHDRAW -->
+
+        <div class="wallet-actions">
+
+            <button
+                class="wallet-btn"
+                onclick="addMoney()">
+                ＋ ADD
+            </button>
+
+            <button
+                class="wallet-btn"
+                onclick="withdrawMoney()">
+                ↗ WITHDRAW
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- EARNINGS / PAYOUTS -->
+
+    <div class="wallet-stats">
+
+        <div class="stat-card">
+
+            <div class="stat-title">
+                EARNINGS
+            </div>
+
+            <div class="stat-value">
+
+                <div class="small-coin">
+                    ₹
+                </div>
+
+                ₹0.00
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-title">
+                PAYOUTS
+            </div>
+
+            <div class="stat-value">
+
+                <div class="small-coin">
+                    ₹
+                </div>
+
+                ₹0.00
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WALLET HISTORY -->
+
+    <div class="history-section">
+
+        <div class="history-title">
+            WALLET HISTORY
+        </div>
+
+        <div class="history-card">
+
+            <div class="history-empty">
+                No wallet transactions yet.
+                <br>
+                Your wallet activity will appear here.
+            </div>
+
         </div>
 
     </div>
@@ -1299,6 +1451,25 @@ body{
 </div>
 
 </section>
+
+
+<script>
+
+/* ================= WALLET ACTIONS ================= */
+
+function addMoney(){
+
+    alert("Add Money option selected.");
+
+}
+
+function withdrawMoney(){
+
+    alert("Withdraw option selected.");
+
+}
+
+</script>
     
 <!-- ================= BOTTOM NAV ================= -->
 
