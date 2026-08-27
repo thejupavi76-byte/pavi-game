@@ -787,6 +787,236 @@ body{
         font-size:13px;
     }
 }
+    /* ================================
+   PAVI GAME - PREMIUM BLACK WHITE
+   PROFILE PAGE
+================================ */
+
+#profilePage {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08), transparent 35%),
+        linear-gradient(180deg, #080808 0%, #000 100%) !important;
+    color: #fff !important;
+    min-height: calc(100vh - 82px);
+    padding: 22px 16px 105px;
+}
+
+/* PREMIUM CARD */
+
+#profilePage .simple-card {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.075),
+        rgba(255,255,255,0.018)
+    ) !important;
+
+    border: 1px solid rgba(255,255,255,0.55) !important;
+    border-radius: 24px !important;
+
+    padding: 25px 20px !important;
+    margin: 15px 0 22px !important;
+
+    box-shadow:
+        0 0 5px rgba(255,255,255,0.55),
+        0 0 15px rgba(255,255,255,0.20),
+        0 0 35px rgba(255,255,255,0.08),
+        inset 0 0 25px rgba(255,255,255,0.025) !important;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition: 0.3s ease;
+}
+
+/* TOP LIGHT EDGE */
+
+#profilePage .simple-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
+    height: 1px;
+
+    background: rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 0 6px #fff,
+        0 0 15px rgba(255,255,255,0.65),
+        0 0 30px rgba(255,255,255,0.3);
+}
+
+/* SOFT CORNER GLOW */
+
+#profilePage .simple-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    border-radius: 24px;
+
+    box-shadow:
+        inset 0 0 18px rgba(255,255,255,0.035);
+}
+
+/* HEADINGS */
+
+#profilePage h1,
+#profilePage h2,
+#profilePage h3 {
+    color: #fff !important;
+
+    text-shadow:
+        0 0 4px rgba(255,255,255,0.9),
+        0 0 10px rgba(255,255,255,0.45),
+        0 0 22px rgba(255,255,255,0.18);
+}
+
+/* MAIN TITLE */
+
+#profilePage .simple-card h2 {
+    font-size: 25px !important;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    margin-bottom: 18px;
+}
+
+/* TEXT */
+
+#profilePage p {
+    color: #cfcfcf !important;
+    line-height: 1.6;
+}
+
+#profilePage strong {
+    color: #fff !important;
+}
+
+/* PROFILE / ACCOUNT ITEMS */
+
+#profilePage .profile-item,
+#profilePage .account-item,
+#profilePage .menu-item {
+    background: rgba(255,255,255,0.025) !important;
+
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    border-radius: 17px !important;
+
+    padding: 16px !important;
+    margin: 12px 0 !important;
+
+    color: #fff !important;
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,0.08),
+        inset 0 0 12px rgba(255,255,255,0.018);
+
+    transition: all 0.25s ease;
+}
+
+/* HOVER / ACTIVE GLOW */
+
+#profilePage .profile-item:hover,
+#profilePage .account-item:hover,
+#profilePage .menu-item:hover {
+    border-color: rgba(255,255,255,0.85) !important;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,0.55),
+        0 0 20px rgba(255,255,255,0.20),
+        inset 0 0 15px rgba(255,255,255,0.04);
+}
+
+/* ICONS */
+
+#profilePage i,
+#profilePage .icon {
+    color: #fff !important;
+
+    filter:
+        drop-shadow(0 0 4px #fff)
+        drop-shadow(0 0 10px rgba(255,255,255,0.45));
+}
+
+/* BUTTONS */
+
+#profilePage button,
+#profilePage .btn {
+    background: #050505 !important;
+    color: #fff !important;
+
+    border: 1px solid rgba(255,255,255,0.65) !important;
+    border-radius: 13px !important;
+
+    padding: 12px 20px !important;
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,0.25),
+        inset 0 0 8px rgba(255,255,255,0.03);
+
+    transition: all 0.25s ease;
+}
+
+/* BUTTON GLOW */
+
+#profilePage button:hover,
+#profilePage .btn:hover {
+    background: #fff !important;
+    color: #000 !important;
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 20px rgba(255,255,255,0.55),
+        0 0 35px rgba(255,255,255,0.20);
+}
+
+/* INPUT */
+
+#profilePage input {
+    background: #020202 !important;
+    color: #fff !important;
+
+    border: 1px solid rgba(255,255,255,0.35) !important;
+    border-radius: 11px !important;
+
+    padding: 12px !important;
+
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,0.025);
+}
+
+#profilePage input:focus {
+    border-color: #fff !important;
+    outline: none;
+
+    box-shadow:
+        0 0 7px rgba(255,255,255,0.55),
+        0 0 18px rgba(255,255,255,0.18);
+}
+
+/* MOBILE */
+
+@media (max-width: 380px) {
+
+    #profilePage {
+        padding: 17px 12px 98px;
+    }
+
+    #profilePage .simple-card {
+        padding: 21px 16px !important;
+        border-radius: 20px !important;
+    }
+
+    #profilePage .simple-card h2 {
+        font-size: 22px !important;
+    }
+}
 </style>
 </head>
 
