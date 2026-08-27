@@ -13,222 +13,183 @@
 }
 
 body{
-    background:#0d0b18;
+    background:#080014;
     color:white;
     font-family:Arial,sans-serif;
     min-height:100vh;
+    padding-bottom:85px;
 }
 
 .header{
-    height:125px;
-    padding:22px 26px;
-    border-bottom:1px solid #29263b;
+    height:155px;
+    padding:20px 18px;
+    background:#0b0015;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #251033;
 }
 
-.logo-area h2{
-    color:#b96cff;
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:radial-gradient(circle,#d96cff,#5b00ff,#18002e);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 0 18px #8b00ff;
+}
+
+.welcome{
+    text-align:center;
+}
+
+.welcome small{
+    font-size:17px;
+    color:#ddd;
+}
+
+.welcome h1{
     font-size:25px;
-}
-
-.logo-area p{
-    color:#9691a5;
-    margin-top:8px;
-    font-size:14px;
+    margin-top:5px;
 }
 
 .wallet{
-    background:linear-gradient(135deg,#a52cff,#7b21d9);
-    padding:18px 24px;
+    background:linear-gradient(135deg,#6b00ff,#a000ff);
+    padding:14px 20px;
     border-radius:20px;
-    font-size:20px;
+    font-size:21px;
     font-weight:bold;
+    box-shadow:0 0 15px #5500aa;
 }
 
-.container{
-    padding:28px 25px 110px;
+.coin{
+    color:#ffd42a;
 }
 
-.hero{
-    background:linear-gradient(145deg,#211e30,#191725);
-    border:1px solid #302c42;
-    border-radius:30px;
-    padding:32px;
-    margin-bottom:38px;
+.banner{
+    margin:0 18px;
+    height:145px;
+    border-radius:15px;
+    background:
+      linear-gradient(135deg,#29004d,#7500d9,#17002d);
+    border:2px solid #8d00ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    box-shadow:0 0 20px #6200a8;
 }
 
-.hero small{
-    color:#bf70ff;
-    font-weight:bold;
+.banner h2{
+    font-size:31px;
+    color:#fff;
+    text-shadow:0 0 12px #d100ff;
 }
 
-.hero h1{
-    font-size:32px;
-    margin:18px 0;
-}
-
-.hero p{
-    color:#aaa5b8;
-    font-size:17px;
+.banner p{
+    margin-top:8px;
+    color:#ddd;
 }
 
 .section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
+    text-align:center;
+    font-size:25px;
+    margin:30px 0 20px;
 }
 
-.section-title h2{
-    font-size:24px;
+.matches{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    padding:0 18px;
 }
 
-.available{
-    color:#c06cff;
-    font-size:15px;
-}
-
-.cards{
-    background:#1b1928;
-    border:1px solid #302c42;
-    border-radius:28px;
-    min-height:200px;
+.match{
+    height:165px;
+    border-radius:8px;
+    background:linear-gradient(145deg,#23003e,#150024);
     display:flex;
     flex-direction:column;
+    align-items:center;
     justify-content:center;
-    align-items:center;
     text-align:center;
+    border:1px solid #31005a;
 }
 
-.game-icon{
-    font-size:45px;
-    margin-bottom:20px;
-}
-
-.cards p{
-    color:#aaa5b8;
-    font-size:18px;
-}
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    height:90px;
-    background:#111827;
-    border-top:1px solid #303044;
+.match-icon{
+    width:65px;
+    height:65px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#1700c9,#006eff);
     display:flex;
-    justify-content:space-around;
     align-items:center;
+    justify-content:center;
+    font-size:38px;
+    margin-bottom:14px;
 }
 
-.nav-item{
+.match span{
+    font-size:20px;
+}
+
+.tabs{
+    margin:0 18px 30px;
+    display:flex;
+    border-radius:9px;
+    overflow:hidden;
+}
+
+.tab{
+    width:50%;
+    padding:18px 5px;
     text-align:center;
-    color:#a7a3b1;
-    font-size:14px;
+    background:#ddd9e2;
+    color:white;
+    font-size:21px;
+    font-weight:bold;
 }
 
-.nav-item .icon{
-    font-size:27px;
-    margin-bottom:5px;
+.tab.active{
+    background:linear-gradient(90deg,#5700ff,#7200ff);
 }
 
-.nav-item.active{
-    color:#bd6cff;
+.games{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px 14px;
+    padding:0 20px;
 }
 
-@media(max-width:500px){
-    .header{
-        padding:20px;
-    }
-
-    .container{
-        padding:25px 20px 110px;
-    }
-
-    .hero{
-        padding:28px;
-    }
-
-    .hero h1{
-        font-size:29px;
-    }
-
-    .wallet{
-        padding:15px 18px;
-        font-size:18px;
-    }
+.game{
+    text-align:center;
+    cursor:pointer;
 }
-</style>
-</head>
 
-<body>
+.game-img{
+    height:105px;
+    border-radius:12px;
+    background:
+      radial-gradient(circle at 50% 40%,#b000ff,#4a00a0 45%,#12001e 75%);
+    border:2px solid #8d00ff;
+    box-shadow:0 0 12px #6500aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
 
-<header class="header">
-
-    <div class="logo-area">
-        <h2>🎮 PAVI GAME</h2>
-        <p>Welcome, Pavilon</p>
-    </div>
-
-    <div class="wallet">
-        💳 ₹0.00
-    </div>
-
-</header>
-
-
-<main class="container">
-
-    <section class="hero">
-        <small>PAVI GAME</small>
-
-        <h1>Play &amp; Win</h1>
-
-        <p>
-            Join tournaments and earn rewards.
-        </p>
-    </section>
-
-
-    <div class="section-title">
-        <h2>Tournaments</h2>
-        <span class="available">0 Available</span>
-    </div>
-
-
-    <section class="cards">
-
-        <div class="game-icon">🎮</div>
-
-        <p>No tournaments available.</p>
-
-    </section>
-
-</main>
-
-
-<nav class="bottom-nav">
-
-    <div class="nav-item active">
-        <div class="icon">⌂</div>
-        Home
-    </div>
-
-    <div class="nav-item">
-        <div class="icon">▣</div>
-        Wallet
-    </div>
-
-    <div class="nav-item">
-        <div class="icon">👤</div>
-        Profile
-    </div>
-
-</nav>
-
-</body>
-</html>
+.game-img:before{
+    content:"⚡";
+    font-size:55px;
+   
