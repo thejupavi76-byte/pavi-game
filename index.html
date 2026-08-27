@@ -1055,7 +1055,6 @@ body {
 </nav>
     
 <script>
-    
     function goHome() {
     window.location.href = "index.html";
 }
@@ -1069,28 +1068,10 @@ function goProfile() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    const path = window.location.pathname.toLowerCase();
-
-    let currentPage = "home";
-
-    if (path.includes("wallet")) {
-        currentPage = "wallet";
-    } else if (path.includes("profile")) {
-        currentPage = "profile";
-    }
-
-    document.querySelectorAll(".nav-item").forEach(function (item) {
-
-        if (item.dataset.page === currentPage) {
-            item.classList.add("active");
-        }
-
-    });
-
+    ...
 });
-    
-<script>
 
+</script>
+    
 </body>
 </html>
